@@ -1,3 +1,2 @@
 # portfolio
-This is fork of https://codepen.io/ineskcodes/pen/QWNREQq . Credits owned by respective creator 
-[![Profile views](https://komarev.com/ghpvc/?username=nuhmanpk&label=Profile%20views)](https://github.com/nuhmanpk)
+[![Visits](https://api.visitorbadge.io/api/visitors?path=[https://github.com/nuhmanpk/portfolio](https://github.com/nuhmanpk/portfolio)&countColor=%23007EC6&label=Visits&style=flat-square&token=YOUR_API_TOKEN)](https://YOUR_REPOSITORY_URL)
