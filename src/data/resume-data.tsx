@@ -66,7 +66,7 @@ export const RESUME_DATA = {
       title: "Full Stack Developer",
       start: "2022",
       end: "Present",
-      // description:,
+      description:"",
     },
     {
       company: "Open Source Contributer",
