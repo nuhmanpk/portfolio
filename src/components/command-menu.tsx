@@ -39,6 +39,9 @@ export const CommandMenu = ({ links }: Props) => {
           <span className="text-xs">⌘</span>J
         </kbd>{" "}
         to open the command menu
+        <p className="text-xs">
+          This is a fork <a href="https://cv.jarocki.me/"> <span className="text-yellow-950">cv.jarocki.me</span></a> Modified By <a href="https://github.com/nuhmanpk"><span className="text-yellow-900">Nuhman PK</span></a>
+        </p>
       </p>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />

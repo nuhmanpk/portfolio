@@ -1,278 +1,250 @@
-import {
-  AmbitLogo,
-  BarepapersLogo,
-  BimLogo,
-  CDGOLogo,
-  ClevertechLogo,
-  ConsultlyLogo,
-  EvercastLogo,
-  Howdy,
-  JarockiMeLogo,
-  JojoMobileLogo,
-  Minimal,
-  MobileVikingsLogo,
-  MonitoLogo,
-  NSNLogo,
-  ParabolLogo,
-  TastyCloudLogo,
-  YearProgressLogo,
-} from "@/images/logos";
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import { GitHubIcon, LinkedInIcon, XIcon, InstagramIcon, KaggleIcon, MediumIcon, StackOverFlow } from "@/components/icons";
 
 export const RESUME_DATA = {
-  name: "Bartosz Jarocki",
-  initials: "BJ",
-  location: "Wrocław, Poland, CET",
-  locationLink: "https://www.google.com/maps/place/Wrocław",
+  name: "Nuhman PK",
+  initials: "Pk",
+  location: "Malappuram, Kerala",
+  locationLink: "https://www.google.com/maps/place/Malappuram",
   about:
-    "Full Stack Engineer focused on building products with extra attention to detail",
+    "Full Stack Engineer focused on building sclable products with passion and a knack for translating complex challenges into elegant solutions",
   summary:
-    "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. I lead teams effectively, ensuring an environment where people can do their best work. Currently, I work mostly with TypeScript, React, Node.js, and GraphQL. I have over 8 years of experience in working remotely with companies all around the world.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/1017620?v=4",
-  personalWebsiteUrl: "https://jarocki.me",
+    "I am a passionate Full Stack Developer with expertise in various technologies and a strong focus on building scalable applications. I have a solid background in Machine Learning (ML), particularly in areas like Computer Vision, Deep Learning, and Neural Networks. My technical skills extend to frameworks such as Node.js, Angular, React, Flask, and Express.js. With a keen interest in open-source technology, I actively contribute to projects on GitHub, showcasing my commitment to collaboration and innovation. Feel free to explore my work ",
+  personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
   contact: {
-    email: "bartosz.jarocki@hey.com",
-    tel: "+48530213401",
+    email: "nuhmanpk7@gmail.com",
     social: [
       {
         name: "GitHub",
-        url: "https://github.com/BartoszJarocki",
+        url: "https://github.com/nuhmanpk",
         icon: GitHubIcon,
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/bjarocki/",
+        url: "https://www.linkedin.com/in/nuhmanpk/",
         icon: LinkedInIcon,
       },
       {
         name: "X",
-        url: "https://x.com/BartoszJarocki",
+        url: "https://x.com/pk__nuhman",
         icon: XIcon,
+      },
+      {
+        name: "Instagram",
+        url: "https://instagram.com/nuhman_pk",
+        icon: InstagramIcon,
+      },
+      {
+        name: "Kaggle",
+        url: "https://kaggle.com/nuhmanpk",
+        icon: KaggleIcon,
+      },
+      {
+        name: "Medium",
+        url: "https://medium.com/@nuhmanpk",
+        icon: MediumIcon,
+      },
+      {
+        name: "StackOverflow",
+        url: "https://stackoverflow.com/users/16388290/nuhman-pk",
+        icon: StackOverFlow,
       },
     ],
   },
   education: [
     {
-      school: "Wrocław University of Technology",
-      degree: "Bachelor's Degree in Control systems engineering and Robotics",
-      start: "2007",
-      end: "2010",
+      school: "College Of Applied Science",
+      degree: "Bachelor's Degree in Computer Science",
+      start: "2019",
+      end: "2022",
     },
   ],
   work: [
     {
-      company: "Parabol",
-      link: "https://parabol.co",
+      company: "Bititude",
+      link: "https://bititude.com",
       badges: ["Remote"],
-      title: "Senior Full Stack Developer",
-      logo: ParabolLogo,
-      start: "2021",
-      end: "2024",
-      description:
-        "Implemented new features, led squad, worked on improving the way developers ship the code, started migration from Emotion to Tailwind CSS and more. Technologies: React, TypeScript, GraphQL",
+      title: "Full Stack Developer",
+      start: "2022",
+      end: "Present",
+      // description:,
     },
     {
-      company: "Clevertech",
-      link: "https://clevertech.biz",
-      badges: ["Remote"],
-      title: "Lead Android Developer → Full Stack Developer",
-      logo: ClevertechLogo,
-      start: "2015",
-      end: "2021",
+      company: "Open Source Contributer",
+      link: "https://github.com/nuhmanpk",
+      badges: ["Hobby Dev"],
+      title: "Contributer",
+      start: "2019",
+      end: "Present",
       description:
-        "Created Android mobile apps and led teams for companies like Vision Media, DKMS, or AAA. Built live streaming application for Evercast from scratch. Technologies: Android, Kotlin, React, TypeScript, GraphQL",
-    },
-    {
-      company: "Jojo Mobile",
-      link: "https://bsgroup.eu/",
-      badges: [],
-      title: "Android Developer → Lead Android Developer",
-      logo: JojoMobileLogo,
-      start: "2012",
-      end: "2015",
-      description:
-        "Built an Android team, created Android apps for biggest Polish companies like LOT, Polskie Radio, Agora, PolskaPress",
-    },
-    {
-      company: "Nokia Siemens Networks",
-      link: "https://www.nokia.com",
-      badges: [],
-      title: "C/C++ Developer",
-      logo: NSNLogo,
-      start: "2010",
-      end: "2012",
-      description: "Creating and testing software for LTE base stations",
+        "My journey thrives on GitHub contributions and transformative projects, like cutting-edge Telegram bots revolutionizing communication and widely acclaimed PyPI packages simplifying complex tasks for over 80,000 developers. Fostering a vibrant open source community where ideas spark and collaborations flourish, I push boundaries in this fast-paced landscape, contributing to the collective knowledge and leaving a lasting legacy of impact.",
     },
   ],
   skills: [
     "JavaScript",
     "TypeScript",
-    "React/Next.js/Remix",
+    "React",
     "Node.js",
-    "GraphQL",
-    "Relay",
-    "WebRTC",
+    "Express",
+    "Angular",
+    "Python",
+    "Machine Learning",
+    "FastAPI",
+    "Telegram Bot Frameworks",
+    "Computervision"
   ],
   projects: [
     {
-      title: "Consultly",
+      title: "YoutubeTags",
       techStack: [
-        "Side Project",
-        "TypeScript",
-        "Next.js",
-        "Vite",
-        "GraphQL",
-        "WebRTC",
+        "Python", "Side Project", "Open Source", "Pypi Package"
       ],
-      description: "A platform to build and grow your online business",
-      logo: ConsultlyLogo,
+      description: "YoutubeTags is a YouTube SEO tool to Extract YouTube Video Tags without YouTube API. Capable to extract Video and Channel Tags. With more than 50k+ downloads from pypi.org",
       link: {
-        label: "consultly.com",
-        href: "https://consultly.com/",
+        label: "https://pypi.org/project/YoutubeTags/",
+        href: "https://pypi.org/project/YoutubeTags/",
       },
     },
     {
-      title: "Monito",
-      techStack: ["Side Project", "TypeScript", "Next.js", "Browser Extension"],
+      title: "Super Logger",
+      techStack: ["Side Project", "Open Source", "VsCode Extension"],
       description:
-        "Browser extension that records everything happening in a web application",
-      logo: MonitoLogo,
+        "Super Logger is a versatile Visual Studio Code extension that enhances your coding experience across various programming languages. It provides entertaining and informative print statements with random emojis and jokes, making debugging a delightful and effective process.",
       link: {
-        label: "monito.dev",
-        href: "https://monito.dev/",
+        label: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.superlogger",
+        href: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.superlogger",
       },
     },
     {
-      title: "Jarocki.me",
-      techStack: ["Side Project", "Next.js", "MDX"],
-      description:
-        "My personal website and blog. Built with Next.js and Notion API",
-      logo: JarockiMeLogo,
+      title: "Telegram Bots",
+      techStack: ["Side Project", "Python", "Pyrogram", "MongoDB"],
+      description: "Unlock a world of automated efficiency with my wide range of Telegram bots, expertly crafted for specific tasks and built to seamlessly scale",
       link: {
-        label: "github.com",
-        href: "https://jarocki.me/",
+        label: "github.com/nuhmanpk",
+        href: "https://github.com/nuhmanpk",
       },
     },
     {
-      title: "Minimal",
-      techStack: ["Side Project", "Next.js", "Puppeteer"],
+      title: "generateApiKey",
+      techStack: ["Python", "Side Project", "Open Source", "Pypi Package"],
       description:
-        "Minimalist calendars, habit trackers and planners generator",
-      logo: Minimal,
+        "This package provides a convenient way to generate API keys using a secret, seed, and an optional include keyword. The generated keys are unique and secure, making them suitable for use in a variety of applications. With more than 1k+ downloads from pypi.org .The package supports generating API keys using a variety of methods such as UUID v5 and SHA-256 algorithm. The keys are generated using a combination of seed, secret, and include keyword. Additionally, the package allows you to insert the include keyword at a random position in the seed which will make it more difficult to guess.",
+      link: {
+        label: "https://pypi.org/project/generateApiKey/",
+        href: "https://pypi.org/project/generateApiKey/",
+      },
+    },
+    {
+      title: "Webtrench",
+      techStack: ["Python", "Side Project", "Open Source", "Pypi Package"],
+      description:
+        "A powerful and easy-to-use web scrapper for collecting data from the web. Supports scraping of images, text, videos, meta data, and more. Ideal for machine learning and deep learning engineers. Download and extract data with just one line of code",
+      link: {
+        label: "https://pypi.org/project/Webtrench/",
+        href: "https://pypi.org/project/Webtrench/",
+      },
+    },
+    {
+      title: "CV2Filters",
+      techStack: ["Python", "Side Project", "Open Source", "Pypi Package"],
+      description:
+        "CV2Filters simplifies image processing tasks by providing a high-level abstraction of the underlying OpenCV functionality. As an OpenCV wrapper and a Python package available on PyPI, CV2Filters empowers users of all skill levels to explore the fascinating world of image manipulation. With CV2Filters, you can perform a wide range of tasks, including reading and resizing images, applying filters, detecting edges, reducing noise, and much more. By abstracting away the complexities of OpenCV, CV2Filters makes image processing accessible and enjoyable for everyone",
       link: {
         label: "useminimal.com",
         href: "https://useminimal.com/",
       },
-    },
+    }
+  ], publications: [
     {
-      title: "Barepapers",
-      techStack: ["Side Project", "Next.js", "Puppeteer"],
-      description:
-        "Generates beautiful wallpapers using random shapes and gradients",
-      logo: BarepapersLogo,
+      title: "Supercharge Your Web Development: Real-Time HTML Rendering on All Devices",
+      techStack: ["Sep 13, 2023"],
+      desciption: "",
       link: {
-        label: "barepapers.com",
-        href: "https://barepapers.com/",
+        label: "medium.com",
+        href: "https://nuhmanpk.medium.com/supercharge-your-web-development-real-time-html-rendering-on-all-devices-with-vs-code-live-server-56921c1d100",
       },
     },
     {
-      title: "Year progress",
-      techStack: ["Side Project", "TypeScript", "Next.js"],
-      description: "Tracks current year progress and displays a countdown",
-      logo: YearProgressLogo,
+      title: "Extracting YouTube Tags Made Easy: Introducing YoutubeTags Python API Wrapper",
+      techStack: ["Jul 23, 2023"],
+      desciption: "",
       link: {
-        label: "getyearprogress.com",
-        href: "https://getyearprogress.com/",
+        label: "medium.com",
+        href: "https://medium.com/@nuhmanpk/extracting-youtube-tags-made-easy-introducing-youtubetags-python-api-wrapper-c3bd3416d5fc",
       },
     },
     {
-      title: "Parabol",
-      techStack: [
-        "Full Stack Developer",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "GraphQL",
-      ],
-      description:
-        "The Agile meeting co-pilot that delivers better meetings with less effort",
-      logo: ParabolLogo,
+      title: "A Comprehensive Guide to cv2filters: A Powerful OpenCV Wrapper for Image Preprocessing",
+      techStack: ["Jul 23, 2023"],
+      desciption: "",
       link: {
-        label: "github.com",
-        href: "https://parabol.co/",
+        label: "medium.com",
+        href: "https://medium.com/@nuhmanpk/a-comprehensive-guide-to-cv2filters-a-powerful-opencv-wrapper-for-image-preprocessing-80c25c897f53",
+      },
+    }
+  ], certifications: [
+    {
+      title: "Pytorch for Deep Leaning",
+      techStack: ["Udemy", "Feb 2023"],
+      desciption: "",
+      link: {
+        label: "udemy.com",
+        href: "https://www.udemy.com/certificate/UC-db3422ce-789f-4ee3-b95d-e0c17cc8a6a5/",
       },
     },
     {
-      title: "Evercast",
-      techStack: [
-        "Lead Frontend Developer",
+      title: "Machine Learning",
+      techStack: ["Kaggle", "Apr 2023"],
+      desciption: "",
+      link: {
+        label: "kaggle.com",
+        href: "https://www.kaggle.com/learn/certification/nuhmanpk/intro-to-machine-learning",
+      },
+    },
+    {
+      title: "Advanced SQL",
+      techStack: ["Kaggle", "Jul 2023"],
+      desciption: "",
+      link: {
+        label: "kaggle.com",
+        href: "https://www.kaggle.com/learn/certification/nuhmanpk/advanced-sql",
+      },
+    },
+    {
+      title: "Build CNN with TensorFlow and Keras",
+      techStack: ["Kaggle", "Spe 2023"],
+      desciption: "",
+      link: {
+        label: "kaggle.com",
+        href: "https://www.kaggle.com/learn/certification/nuhmanpk/computer-vision",
+      },
+    },
+    {
+      title: "Transformer Models and BERT Model",
+      techStack: ["Google", "Dec 2023"],
+      desciption: "",
+      link: {
+        label: "https://www.cloudskillsboost.google/",
+        href: "https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6651890",
+      },
+    },
+    {
+      title: "Introduction to Image Generation",
+      techStack: ["Google", "Dec 2023"],
+      desciption: "",
+      link: {
+        label: "https://www.cloudskillsboost.google/",
+        href: "https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6643394",
+      },
+    },
+    {
+      title: "Attention Machanism",
+      techStack: ["Google", "Dec 2023"],
+      desciption: "",
+      link: {
+        label: "https://www.cloudskillsboost.google/",
+        href: "https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6643540",
+      },
+    },
 
-        "TypeScript",
-        "React",
-        "Node.js",
-        "GraphQL",
-      ],
-      description:
-        "Creative collaboration platform that combines video conferencing and HD media streaming",
-      logo: EvercastLogo,
-      link: {
-        label: "evercast.us",
-        href: "https://www.evercast.us/",
-      },
-    },
-    {
-      title: "Mobile Vikings",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application for leading virtual mobile operator in Poland",
-      logo: MobileVikingsLogo,
-      link: {
-        label: "mobilevikings.pl",
-        href: "https://mobilevikings.pl/",
-      },
-    },
-    {
-      title: "Howdy",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Howdy is a place for you to join communities you care about",
-      logo: Howdy,
-      link: {
-        label: "play.google.com",
-        href: "https://howdy.co/",
-      },
-    },
-    {
-      title: "Tastycloud",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application for managing and displaying restaurant menus in kiosk mode",
-      logo: TastyCloudLogo,
-      link: {
-        label: "tastycloud.fr",
-        href: "https://www.tastycloud.fr/",
-      },
-    },
-    {
-      title: "Ambit",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application that helps with sharing your contact details",
-      logo: AmbitLogo,
-    },
-    {
-      title: "Bim",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application that helps with booking a table in a restaurants",
-      logo: BimLogo,
-    },
-    {
-      title: "Canal Digital GO",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Video streaming mobile application for Canal Digital subscribers",
-      logo: CDGOLogo,
-    },
-  ],
+  ]
 } as const;
