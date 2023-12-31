@@ -149,8 +149,8 @@ export const RESUME_DATA = {
       description:
         "CV2Filters simplifies image processing tasks by providing a high-level abstraction of the underlying OpenCV functionality. As an OpenCV wrapper and a Python package available on PyPI, CV2Filters empowers users of all skill levels to explore the fascinating world of image manipulation. With CV2Filters, you can perform a wide range of tasks, including reading and resizing images, applying filters, detecting edges, reducing noise, and much more. By abstracting away the complexities of OpenCV, CV2Filters makes image processing accessible and enjoyable for everyone",
       link: {
-        label: "useminimal.com",
-        href: "https://useminimal.com/",
+        label: "https://pypi.org/project/cv2filters/",
+        href: "https://pypi.org/project/cv2filters/",
       },
     }
   ], publications: [
