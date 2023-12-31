@@ -6,7 +6,7 @@ export const RESUME_DATA = {
   location: "Malappuram, Kerala",
   locationLink: "https://www.google.com/maps/place/Malappuram",
   about:
-    "Full Stack Engineer focused on building sclable products with passion and a knack for translating complex challenges into elegant solutions",
+    "Full Stack Engineer focused on building scalable products with passion and a knack for translating complex challenges into elegant solutions",
   summary:
     "I am a passionate Full Stack Developer with expertise in various technologies and a strong focus on building scalable applications. I have a solid background in Machine Learning (ML), particularly in areas like Computer Vision, Deep Learning, and Neural Networks. My technical skills extend to frameworks such as Node.js, Angular, React, Flask, and Express.js. With a keen interest in open-source technology, I actively contribute to projects on GitHub, showcasing my commitment to collaboration and innovation. Feel free to explore my work ",
   personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
@@ -52,7 +52,7 @@ export const RESUME_DATA = {
   },
   education: [
     {
-      school: "College Of Applied Science",
+      school: "College of Applied Science",
       degree: "Bachelor's Degree in Computer Science",
       start: "2019",
       end: "2022",
@@ -69,10 +69,10 @@ export const RESUME_DATA = {
       description:"",
     },
     {
-      company: "Open Source Contributer",
+      company: "Open Source Contributor",
       link: "https://github.com/nuhmanpk",
       badges: ["Hobby Dev"],
-      title: "Contributer",
+      title: "Contributor",
       start: "2019",
       end: "Present",
       description:
