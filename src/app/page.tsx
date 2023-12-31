@@ -54,9 +54,9 @@ export default function Page() {
                   size="icon"
                   asChild
                 >
-                  <a href={`tel:${RESUME_DATA.contact.tel}`}>
+                  {/* <a href={`tel:${RESUME_DATA.contact.tel}`}>
                     <PhoneIcon className="h-4 w-4" />
-                  </a>
+                  </a> */}
                 </Button>
               ) : null}
               {RESUME_DATA.contact.social.map((social) => (
