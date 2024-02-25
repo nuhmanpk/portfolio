@@ -144,13 +144,23 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "CV2Filters",
+      title: "Cv2Filters",
       techStack: ["Python", "Side Project", "Open Source", "Pypi Package"],
       description:
         "CV2Filters simplifies image processing tasks by providing a high-level abstraction of the underlying OpenCV functionality. As an OpenCV wrapper and a Python package available on PyPI, CV2Filters empowers users of all skill levels to explore the fascinating world of image manipulation. With CV2Filters, you can perform a wide range of tasks, including reading and resizing images, applying filters, detecting edges, reducing noise, and much more. By abstracting away the complexities of OpenCV, CV2Filters makes image processing accessible and enjoyable for everyone",
       link: {
         label: "https://pypi.org/project/cv2filters/",
         href: "https://pypi.org/project/cv2filters/",
+      },
+    },
+    {
+      title: "Nano Metrics",
+      techStack: ["Open Source", "Pypi Package", "Python", "Side Project"],
+      description:
+        "Monitor system metrics effortlessly with this quick and convenient VSCode extension. Access real-time information on CPU load, memory usage, core load, and running instances of various services right from the side panel. Stay informed about your system's health and performance with ease.",
+      link: {
+        label: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.nanometrics",
+        href: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.nanometrics",
       },
     }
   ], publications: [
