@@ -40,7 +40,7 @@ export const CommandMenu = ({ links }: Props) => {
         </kbd>{" "}
         to open the command menu
         <p className="text-xs">
-          This is a fork <a href="https://cv.jarocki.me/"> <span className="text-yellow-950">cv.jarocki.me</span></a> Modified By <a href="https://github.com/nuhmanpk"><span className="text-yellow-900">Me</span></a>
+          Get source code <a href="https://github.com/nuhmanpk/portfolio"> <span className="text-yellow-950">here</span></a> 
         </p>
       </p>
       <CommandDialog open={open} onOpenChange={setOpen}>
