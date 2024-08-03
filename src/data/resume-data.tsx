@@ -6,7 +6,7 @@ export const RESUME_DATA = {
   location: "Malappuram, Kerala",
   locationLink: "https://www.google.com/maps/place/Malappuram",
   about:
-    "Full Stack Engineer focused on building scalable products with passion and a knack for translating complex challenges into elegant solutions",
+    "Full Stack Senior Software Engineer focused on building scalable products with passion and a knack for translating complex challenges into elegant solutions",
   summary:
     "Welcome to my corner of the web! I'm a versatile Full Stack MEARN Developer with a deep passion for AI and machine learning. With a solid foundation in PyTorch and expertise in areas like Computer Vision, Deep Learning, and Neural Networks, I thrive on tackling complex challenges and pushing the boundaries of what's possible.My journey in tech has been driven by a relentless pursuit of excellence and a strong belief in the power of open source. You'll often find me contributing to the open-source community on GitHub, where I've made significant strides in building innovative projects and inspiring fellow developers. What sets me apart is my dedication to delivering outstanding results and my ability to excel in fast-paced environments. With exceptional problem-solving skills and a collaborative mindset, I'm always ready to tackle new challenges head-on and find creative solutions. As an advocate for open-source development, I believe in the transformative impact of shared knowledge and collective expertise. Join me on this exciting journey of exploration and innovation as we redefine the boundaries of what's achievable in the world of AI and machine learning. In addition to my expertise in AI and machine learning, I'm also passionate about JavaScript and its endless possibilities. I harness its power to create efficient and dynamic solutions, contributing to the ever-evolving landscape of technology. Let's embark on this journey together, where innovation knows no bounds and possibilities are limitless. Together, we can shape the future of technology and create solutions that make a real difference.",
   personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
@@ -63,8 +63,17 @@ export const RESUME_DATA = {
       company: "Bititude",
       link: "https://bititude.com",
       badges: ["Remote"],
+      title: "Senior Software Engineer",
+      start: "2024",
+      end: "Present",
+      description:"",
+    },
+    {
+      company: "Bititude",
+      link: "https://bititude.com",
+      badges: ["Remote"],
       title: "Full Stack Developer",
-      start: "2022",
+      start: "2024",
       end: "Present",
       description:"",
     },
@@ -120,7 +129,7 @@ export const RESUME_DATA = {
       description: "Unlock a world of automated efficiency with my wide range of Telegram bots, expertly crafted for specific tasks and built to seamlessly scale",
       link: {
         label: "github.com/nuhmanpk",
-        href: "https://github.com/nuhmanpk",
+        href: "https://github.com/nuhmanpk/telegram-bots",
       },
     },
     {
@@ -162,6 +171,16 @@ export const RESUME_DATA = {
         label: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.nanometrics",
         href: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.nanometrics",
       },
+    },
+    {
+      title: "PyroSnippets",
+      techStack: ["Open Source", "Pypi Package", "Python", "Side Project","VsCode Extension"],
+      description:
+        "Visual Studio Code extension designed to enhance your Pyrogram development experience!",
+      link: {
+        label: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.pyrosnippets",
+        href: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.pyrosnippets",
+      },
     }
   ], publications: [
     {
@@ -189,6 +208,15 @@ export const RESUME_DATA = {
       link: {
         label: "medium.com",
         href: "https://medium.com/@nuhmanpk/a-comprehensive-guide-to-cv2filters-a-powerful-opencv-wrapper-for-image-preprocessing-80c25c897f53",
+      },
+    },
+    {
+      title: "Building Your First Telegram Bot with Pyrogram: A Step-by-Step Guide",
+      techStack: ["Jun 28, 2024"],
+      description: "",
+      link: {
+        label: "medium.com",
+        href: "nuhmanpk.medium.com/building-your-first-telegram-bot-with-pyrogram-a-step-by-step-guide-76fb1bf906aa",
       },
     }
   ], certifications: [
