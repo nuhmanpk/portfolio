@@ -136,7 +136,7 @@ export const RESUME_DATA = {
       title: "generateApiKey",
       techStack: ["Python", "Side Project", "Open Source", "Pypi Package"],
       description:
-        "This package provides a convenient way to generate API keys using a secret, seed, and an optional include keyword. The generated keys are unique and secure, making them suitable for use in a variety of applications. With more than 1k+ downloads from pypi.org .The package supports generating API keys using a variety of methods such as UUID v5 and SHA-256 algorithm. The keys are generated using a combination of seed, secret, and include keyword. Additionally, the package allows you to insert the include keyword at a random position in the seed which will make it more difficult to guess.",
+        "Unique api key generation tools with more built in functionalities like time / date based hashing, prefix for more unique key creation.",
       link: {
         label: "https://pypi.org/project/generateApiKey/",
         href: "https://pypi.org/project/generateApiKey/",
@@ -156,7 +156,7 @@ export const RESUME_DATA = {
       title: "Cv2Filters",
       techStack: ["Python", "Side Project", "Open Source", "Pypi Package"],
       description:
-        "CV2Filters simplifies image processing tasks by providing a high-level abstraction of the underlying OpenCV functionality. As an OpenCV wrapper and a Python package available on PyPI, CV2Filters empowers users of all skill levels to explore the fascinating world of image manipulation. With CV2Filters, you can perform a wide range of tasks, including reading and resizing images, applying filters, detecting edges, reducing noise, and much more. By abstracting away the complexities of OpenCV, CV2Filters makes image processing accessible and enjoyable for everyone",
+        "CV2Filters simplifies image processing tasks by providing a high-level abstraction of the underlying OpenCV functionality. CV2Filters makes image processing accessible and enjoyable for everyone",
       link: {
         label: "https://pypi.org/project/cv2filters/",
         href: "https://pypi.org/project/cv2filters/",
@@ -166,7 +166,7 @@ export const RESUME_DATA = {
       title: "Nano Metrics",
       techStack: ["Open Source", "Pypi Package", "Python", "Side Project"],
       description:
-        "Monitor system metrics effortlessly with this quick and convenient VSCode extension. Access real-time information on CPU load, memory usage, core load, and running instances of various services right from the side panel. Stay informed about your system's health and performance with ease.",
+        "Monitor system metrics effortlessly with this quick and convenient VSCode extension. Access real-time information on CPU load, memory usage, core load, and running instances of various services right from the side panel.",
       link: {
         label: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.nanometrics",
         href: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.nanometrics",
@@ -181,7 +181,27 @@ export const RESUME_DATA = {
         label: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.pyrosnippets",
         href: "https://marketplace.visualstudio.com/items?itemName=nuhmanpk.pyrosnippets",
       },
-    }
+    },
+    {
+      title: "PyplateX",
+      techStack: ["Open Source", "Pypi Package", "Python", "Side Project"],
+      description:
+        "Simple , Scalable and Ready to use machine-learning ANPR solution.",
+      link: {
+        label: "https://pypi.org/project/pyplatex",
+        href: "https://github.com/nuhmanpk/PyPlateX",
+      },
+    },
+    {
+      title: "SnapNutriBot",
+      techStack: ["Open Source", "Pypi Package", "Python", "Telegram Bot"],
+      description:
+        "Diet tracker Bot built for google competition, powered by Google Gemini API.",
+      link: {
+        label: "https://ai.google.dev/competition/projects/snapnutribot",
+        href: "https://github.com/nuhmanpk/SnapNutriBotV2",
+      },
+    },
   ], publications: [
     {
       title: "Supercharge Your Web Development: Real-Time HTML Rendering on All Devices",
