@@ -10,3 +10,5 @@
 ## Forked and edited by:
 
 [Nuhman PK](https://github.com/nuhmanpk/) : https://github.com/nuhmanpk/portfolio
+
+Here’s the total user count for my package: [100k+ download](https://nuhmanpk.github.io/dev-showcase/)

@@ -6,7 +6,7 @@ export const RESUME_DATA = {
   location: "Malappuram, Kerala",
   locationLink: "https://www.google.com/maps/place/Malappuram",
   about:
-    "23-Year-Old Senior Full Stack Engineer | Building Scalable Solutions with Passion (Yes, I'm really 23)",
+    "24-Year-Old Senior Full Stack Engineer | Building Scalable Solutions with Passion (Yes, I'm really 24)",
   summary:
     "Welcome to my corner of the web! I’m a versatile Full Stack MEARN Developer with a deep passion for AI, machine learning, and open-source innovation. Skilled in PyTorch, with expertise in Computer Vision, Deep Learning, and Neural Networks, I thrive on complex challenges and love pushing the limits of what’s possible. My commitment to excellence drives my active contributions to the open-source community on GitHub, where I’m building impactful projects and inspiring fellow developers. With strong problem-solving skills and a collaborative mindset, I excel in fast-paced environments, always ready to tackle new challenges creatively. Alongside my focus on AI, I’m passionate about JavaScript, leveraging it to build efficient, dynamic solutions that drive forward our ever-evolving tech landscape. Let’s redefine what’s achievable and shape the future of technology together.",
   personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
