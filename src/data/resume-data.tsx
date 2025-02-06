@@ -6,9 +6,9 @@ export const RESUME_DATA = {
   location: "Malappuram, Kerala",
   locationLink: "https://www.google.com/maps/place/Malappuram",
   about:
-    "24-Year-Old Senior Full Stack Engineer | Building Scalable Solutions with Passion (Yes, I'm really 24)",
+    "24-Year-Old Senior Full Stack Engineer | Building Scalable Solutions with Passion (Yes, I'm 24. No, it's not a typo.)",
   summary:
-    "Welcome to my corner of the web! I’m a versatile Full Stack MEARN Developer with a deep passion for AI, machine learning, and open-source innovation. Skilled in PyTorch, with expertise in Computer Vision, Deep Learning, and Neural Networks, I thrive on complex challenges and love pushing the limits of what’s possible. My commitment to excellence drives my active contributions to the open-source community on GitHub, where I’m building impactful projects and inspiring fellow developers. With strong problem-solving skills and a collaborative mindset, I excel in fast-paced environments, always ready to tackle new challenges creatively. Alongside my focus on AI, I’m passionate about JavaScript, leveraging it to build efficient, dynamic solutions that drive forward our ever-evolving tech landscape. Let’s redefine what’s achievable and shape the future of technology together.",
+    "I'm a Senior Software Engineer and Full Stack MEARN Developer who loves open-source development, working with Python, and geeking out over AI & machine learning. I also have a soft spot for JavaScript (yes, I voluntarily chose this life). \n You’ll usually find me building cool stuff on GitHub and helping the developer community build things faster, and pretending I have everything under control in fast-paced environments. \n Oh, and I can do almost anything... until there exists a free version of  GPT",
   personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
   contact: {
     email: "nuhmanpk7@gmail.com",
@@ -66,7 +66,7 @@ export const RESUME_DATA = {
       title: "Senior Software Engineer",
       start: "August 2024",
       end: "Present",
-      description:"",
+      description: "",
     },
     {
       company: "Bititude",
@@ -75,7 +75,7 @@ export const RESUME_DATA = {
       title: "Full Stack Developer",
       start: "April 2022",
       end: "July 2024",
-      description:"",
+      description: "",
     },
     {
       company: "Open Source Contributor",
@@ -174,7 +174,7 @@ export const RESUME_DATA = {
     },
     {
       title: "PyroSnippets",
-      techStack: ["Open Source", "Pypi Package", "Python", "Side Project","VsCode Extension"],
+      techStack: ["Open Source", "Pypi Package", "Python", "Side Project", "VsCode Extension"],
       description:
         "Visual Studio Code extension designed to enhance your Pyrogram development experience!",
       link: {
@@ -200,6 +200,16 @@ export const RESUME_DATA = {
       link: {
         label: "https://ai.google.dev/competition/projects/snapnutribot",
         href: "https://github.com/nuhmanpk/SnapNutriBotV2",
+      },
+    },
+    {
+      title: "Quick Llama",
+      techStack: ["Open Source", "Pypi Package", "Python", "Ollama", "LLM"],
+      description:
+        "A Python wrapper for Ollama that simplifies managing and interacting with LLMs.",
+      link: {
+        label: "https://pypi.org/project/quick-llama/",
+        href: "https://pypi.org/project/quick-llama/",
       },
     },
   ], publications: [
