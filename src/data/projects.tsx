@@ -4,7 +4,7 @@ export const projects = [
         techStack: [
             "Python", "Side Project", "Open Source", "Pypi Package"
         ],
-        description: "YoutubeTags is a YouTube SEO tool to Extract YouTube Video Tags without YouTube API. Capable to extract Video and Channel Tags. With more than 50k+ downloads from pypi.org",
+        description: "YoutubeTags is a YouTube SEO tool to Extract YouTube Video Tags without YouTube API. Capable to extract Video and Channel Tags. With more than 100k+ downloads from pypi.org",
         link: {
             label: "https://pypi.org/project/YoutubeTags/",
             href: "https://pypi.org/project/YoutubeTags/",
