@@ -109,4 +109,14 @@ export const projects = [
             href: "https://pypi.org/project/quick-llama/",
         },
     },
+    {
+        title: "PyroKit",
+        techStack: ["Open Source", "Pypi Package", "Python", "Telegram Bot", "LLM"],
+        description:
+            "The Complete Bot Builder Kit for Pyrogram Bots: Build, Enhance, and Scale with Ease",
+        link: {
+            label: "https://pypi.org/project/pyrokit/",
+            href: "https://pypi.org/project/pyrokit/",
+        },
+    },
 ];
