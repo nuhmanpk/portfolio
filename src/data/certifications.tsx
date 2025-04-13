@@ -1,4 +1,33 @@
 export const certifications = [
+    // template
+    // {
+    //     title: "Title",
+    //     techStack: ["tag1","tag2"],
+    //     description: "",
+    //     link: {
+    //         label: "label to be shown",
+    //         href: "url",
+    //     },
+    // },
+
+    {
+        title: "LangSmith",
+        techStack: ["LangChain Academy", "Mar 2025"],
+        description: "",
+        link: {
+            label: "https://academy.langchain.com",
+            href: "https://academy.langchain.com/certificates/cjpjsbukdl",
+        },
+    },
+    {
+        title: "LangGraph",
+        techStack: ["LangChain Academy", "Mar 2025"],
+        description: "",
+        link: {
+            label: "https://academy.langchain.com",
+            href: "https://academy.langchain.com/certificates/1l7agmymtf",
+        },
+    },
     {
         title: " LangChain- Develop LLM powered applications with LangChain",
         techStack: ["Udemy", "Oct 2024"],
