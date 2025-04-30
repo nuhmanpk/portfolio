@@ -5,14 +5,14 @@ import { skills } from "./skills";
 import { projects } from "./projects";
 import { publications } from "./publications";
 import { certifications } from "./certifications";
+import { getDynamicAge } from "../utils/getAge";
 
 export const RESUME_DATA = {
   name: "Nuhman PK",
   initials: "Pk",
   location: "Malappuram, Kerala",
   locationLink: "https://www.google.com/maps/place/Malappuram",
-  about:
-    "Senior Full Stack Engineer, apparently at 24 | Building scalable solutions",
+  about: `Senior Software Engineer – Full Stack & ML, apparently at ${getDynamicAge()} | Building scalable solutions`,
   summary:
     "I'm Nuhman , a passionate open-source developer who loves working with Python, and geeking out over AI & machine learning. I also have a soft spot for JavaScript (yes, I voluntarily chose this life). \n You’ll usually find me building cool stuff on GitHub and helping the developer community build things faster, and pretending I have everything under control in fast-paced environments. \n Oh, and I can do almost anything... until there exists a free version of  GPT",
   personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
