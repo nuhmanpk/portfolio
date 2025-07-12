@@ -35,7 +35,7 @@ export default function Page() {
               </a>
             </p>
             <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
-              {RESUME_DATA.contact?.email ? (
+              {RESUME_DATA.contact.email ? (
                 <Button
                   className="h-8 w-8"
                   variant="outline"
