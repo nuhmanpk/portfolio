@@ -17,7 +17,7 @@ export const RESUME_DATA = {
     "I'm Nuhman , a passionate open-source developer who loves working with Python, and geeking out over AI & machine learning. I also have a soft spot for JavaScript (yes, I voluntarily chose this life). \n You’ll usually find me building cool stuff on GitHub and helping the developer community build things faster, and pretending I have everything under control in fast-paced environments. \n Oh, and I can do almost anything... until there exists a free version of  GPT",
   personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
   contact: {
-    // email: "nuhmanpk7@gmail.com",
+    email: "nuhmanpk7@gmail.com",
     social: social
   },
   education: education,
