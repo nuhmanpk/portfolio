@@ -1,5 +1,14 @@
 export const publications = [
     {
+        title: "Run Ollama Models Seamlessly in Google Colab with QuickLlama",
+        techStack: ["Jul 8, 2025"],
+        description: "",
+        link: {
+            label: "medium.com",
+            href: "https://nuhmanpk.medium.com/run-ollama-models-seamlessly-in-colab-with-quickllama-0390df94457e",
+        },
+    },
+    {
         title: "Supercharge Your Web Development: Real-Time HTML Rendering on All Devices",
         techStack: ["Sep 13, 2023"],
         description: "",
