@@ -29,6 +29,15 @@ export const certifications = [
         },
     },
     {
+        title: " Building Ambient Agents with LangGraph",
+        techStack: ["LangChain Academy", "Jul 2025"],
+        description: "",
+        link: {
+            label: "https://academy.langchain.com",
+            href: "https://academy.langchain.com/certificates/zeiskyheh8",
+        },
+    },
+    {
         title: " LangChain- Develop LLM powered applications with LangChain",
         techStack: ["Udemy", "Oct 2024"],
         description: "",
@@ -107,6 +116,42 @@ export const certifications = [
         link: {
             label: "https://www.cloudskillsboost.google/",
             href: "https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/10376858",
+        },
+    },
+    {
+        title: "Fundamentals of MCP",
+        techStack: ["Hugging Face", "Jun 2025"],
+        description: "",
+        link: {
+            label: "https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/nuhmanpk/2025-06-09.png",
+            href: "https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/nuhmanpk/2025-06-09.png",
+        },
+    },
+    {
+        title: "Fundamentals of Agents",
+        techStack: ["Hugging Face", "Jun 2025"],
+        description: "",
+        link: {
+            label: "https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/nuhmanpk/2025-06-09.png",
+            href: "https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/nuhmanpk/2025-06-09.png",
+        },
+    },
+    {
+        title: "Data Structures and Algorithms",
+        techStack: ["Udemy", "Jun 2025"],
+        description: "",
+        link: {
+            label: "https://www.udemy.com/certificate/UC-63a51b98-1624-470d-92e3-a8d4b6aebf1d/",
+            href: "https://www.udemy.com/certificate/UC-63a51b98-1624-470d-92e3-a8d4b6aebf1d/",
+        },
+    },
+    {
+        title: "ML Ops",
+        techStack: ["Google", "Jul 2025"],
+        description: "",
+        link: {
+            label: "https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/17138684",
+            href: "https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/17138684",
         },
     },
 

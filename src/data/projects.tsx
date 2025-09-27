@@ -119,4 +119,24 @@ export const projects = [
             href: "https://pypi.org/project/pyrokit/",
         },
     },
+    {
+        title: "Matricx",
+        techStack: ["Open Source", "npm package", "Javascript", "Node.js"],
+        description:
+            "Matricx is a modern, terminal-based dashboard that shows real-time system metrics with a clean and colorful TUI, fully built on Javascript",
+        link: {
+            label: "https://www.npmjs.com/package/matricx",
+            href: "https://www.npmjs.com/package/matricx",
+        },
+    },
+    {
+        title: "Headless Driver",
+        techStack: ["Open Source", "Pypi Package", "Python", "Headless", "Automation"],
+        description:
+            "Headless Chrome WebDriver wrapper for Python (Selenium made simple)",
+        link: {
+            label: "https://pypi.org/project/headless-driver/",
+            href: "https://pypi.org/project/headless-driver/",
+        },
+    },
 ];
