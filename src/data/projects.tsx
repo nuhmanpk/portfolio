@@ -11,6 +11,17 @@ export const projects = [
         },
     },
     {
+        title: "GitSince",
+        techStack: [
+            "Node", "Side Project", "Open Source", "Typescript"
+        ],
+        description: "Dynamic GitHub badges showing your account age and coding journey with customizable themes and styles",
+        link: {
+            label: "https://github.com/nuhmanpk/GitSince",
+            href: "https://github.com/nuhmanpk/GitSince",
+        },
+    },
+    {
         title: "Super Logger",
         techStack: ["Side Project", "Open Source", "VsCode Extension"],
         description:
