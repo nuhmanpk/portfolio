@@ -18,7 +18,7 @@ export const work = [
         description: "",
     },
     {
-        company: "Open Source Contributor",
+        company: "Open Source Developer",
         link: "https://github.com/nuhmanpk",
         badges: ["Hobby Dev"],
         title: "Contributor",
