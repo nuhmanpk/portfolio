@@ -1,6 +1,6 @@
 # Nuhman PK | Senior Software Engineer – Full Stack & ML, apparently at 24 | Building scalable solutions
 
-I'm Nuhman, a passionate open-source developer who loves working with Python, and geeking out over AI & machine learning. I also have a soft spot for JavaScript (yes, I voluntarily chose this life). You’ll usually find me building cool stuff on GitHub and helping the developer community build things faster, and pretending I have everything under control in fast-paced environments. Oh, and I can do almost anything... until there exists a free version of GPT.
+I’m Nuhman, a passionate software engineer and open-source developer specializing in Python, full-stack development, and AI/ML technologies. I thrive on building scalable, production-ready solutions, contributing to the developer community, and exploring emerging technologies. I enjoy creating tools, libraries, and frameworks that empower developers and streamline workflows.
 
 ## Personal Information
 - [Malappuram, Kerala](https://www.google.com/maps/place/Malappuram): Location information about Nuhman.
@@ -13,7 +13,7 @@ I'm Nuhman, a passionate open-source developer who loves working with Python, an
 - [Medium](https://medium.com/@nuhmanpk): Read Nuhman's articles and insights on Medium.
 - [Stack Overflow](https://stackoverflow.com/users/16388290/nuhman-pk): Engage with Nuhman on Stack Overflow for technical discussions.
 - [Bititude](https://bititude.com/): Discover Nuhman's work and projects on Bititude.
-- [Free-Web-Hosting - GitHub Pages](https://nuhmanpk.github.io/Awesome-Web-Hosting/): Access Nuhman's GitHub Pages for free web hosting solutions.
+
 
 ## Projects and Tools
 ### Development Tools
@@ -52,4 +52,6 @@ I'm Nuhman, a passionate open-source developer who loves working with Python, an
 - [Supercharge Your Web Development: Real-Time HTML Rendering on All Devices](https://nuhmanpk.medium.com/supercharge-your-web-development-real-time-html-rendering-on-all-devices-with-vs-code-live-server-56921c1d100): Techniques for enhancing web development with real-time rendering capabilities.
 - [Extracting YouTube Tags Made Easy: Introducing YoutubeTags Python API Wrapper](https://medium.com/@nuhmanpk/extracting-youtube-tags-made-easy-introducing-youtubetags-python-api-wrapper-c3bd3416d5fc): A detailed introduction to the YoutubeTags API wrapper for Python.
 
-This structured summary provides a comprehensive overview of Nuhman's professional background, projects, and resources in the field of software engineering and machine learning.
+This structured summary provides a comprehensive overview of Nuhman's professional background, projects, and resources in the field of software engineering and machine learning. Refer https://nuhmanpk.github.io/portfolio for update to date data. 
+
+
