@@ -67,9 +67,8 @@ export default function Page() {
             </div>
             <div className="flex gap-x-2 pt-1 font-mono text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.social.map((social) => (
-                <motion.div whileHover={{ scale: 1.1 }}>
+                <motion.div key={social.name} whileHover={{ scale: 1.1 }}>
                   <Button
-                    key={social.name}
                     className="h-8 w-8"
                     variant="outline"
                     size="icon"
