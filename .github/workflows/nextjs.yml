@@ -48,50 +48,72 @@ jobs:
       - name: Build Next.js site
         run: npm run build
 
-      - name: Prepare artifact for Pages
+      - name: Prepare artifact for Pages (place files under repo path)
         run: |
           set -euo pipefail
-          rm -rf out
-          mkdir -p out
 
-          echo "Prefer .next/output/static"
+          # repo name (e.g. "portfolio") and decide if this is a repo page or a user/org page
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          IS_USER_PAGE=false
+          if echo "$REPO_NAME" | grep -Eq '\.github\.io$'; then
+            IS_USER_PAGE=true
+          fi
+
+          # target directory inside out/
+          if [ "$IS_USER_PAGE" = true ]; then
+            TARGET="out"
+          else
+            TARGET="out/${REPO_NAME}"
+          fi
+
+          rm -rf out
+          mkdir -p "${TARGET}"
+
+          echo "Repo: ${REPO_NAME}, user-page: ${IS_USER_PAGE}, target: ${TARGET}"
+
+          copy_into_target() {
+            src="$1"
+            echo "Copying from '$src' -> '${TARGET}/'"
+            cp -a "$src"/. "${TARGET}/"
+          }
+
+          # Prefer the canonical Next static output
           if [ -d ".next/output/static" ]; then
-            cp -a .next/output/static/. out/
-            echo "Used .next/output/static"
+            copy_into_target ".next/output/static"
           elif [ -d ".next/output" ]; then
-            cp -a .next/output/. out/
-            echo "Used .next/output"
+            copy_into_target ".next/output"
           elif [ -d ".next/server" ]; then
-            echo "Collecting from .next/server"
-            mkdir -p out
+            echo "Collecting from .next/server..."
+            # copy server app/html into target preserving structure
             if [ -d ".next/server/app" ]; then
               find .next/server/app -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
                 rel="${f#.next/server/app/}"
-                dest="out/${rel}"
+                dest="${TARGET}/${rel}"
                 mkdir -p "$(dirname "$dest")"
                 cp "$f" "$dest"
               done
             fi
+            # top-level pages (404, 500)
             if [ -d ".next/server/pages" ]; then
               find .next/server/pages -maxdepth 1 -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
-                cp "$f" "out/$(basename "$f")"
+                cp "$f" "${TARGET}/$(basename "$f")"
               done
             fi
-            # copy _next static assets (if present)
+            # copy any _next static produced under server
             if [ -d ".next/server/static" ]; then
-              mkdir -p out/_next
-              cp -a .next/server/static out/_next/static
+              mkdir -p "${TARGET}/_next"
+              cp -a .next/server/static "${TARGET}/_next/static"
             fi
           elif [ -n "$(find .next -type f -name '*.html' -print -quit || true)" ]; then
             echo "Collecting loose HTML under .next"
             find .next -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
-              dest="out/${f#.next/}"
+              dest="${TARGET}/${f#.next/}"
               mkdir -p "$(dirname "$dest")"
               cp "$f" "$dest"
             done
             if [ -d ".next/static" ]; then
-              mkdir -p out/_next
-              cp -a .next/static out/_next/static
+              mkdir -p "${TARGET}/_next"
+              cp -a .next/static "${TARGET}/_next/static"
             fi
           else
             echo "No static output found under .next. Listing .next for debugging:"
@@ -100,36 +122,56 @@ jobs:
             exit 1
           fi
 
-          # Ensure there's an index.html at site root
-          if [ ! -f out/index.html ]; then
+          # Ensure public/ static files are copied (if used)
+          if [ -d "public" ]; then
+            mkdir -p "${TARGET}/public" || true
+            cp -a public/. "${TARGET}/public" || true
+          fi
+
+          # Ensure root index.html exists at the repo path (Pages requires index at path root)
+          if [ "$IS_USER_PAGE" = true ]; then
+            ROOT_INDEX="out/index.html"
+          else
+            ROOT_INDEX="out/${REPO_NAME}/index.html"
+          fi
+
+          if [ ! -f "${ROOT_INDEX}" ]; then
+            echo "No index.html at ${ROOT_INDEX} — searching candidates..."
             candidate="$(find out -type f -name 'index.html' | head -n 1 || true)"
             if [ -n "$candidate" ]; then
-              cp "$candidate" out/index.html
-              echo "Copied candidate index: $candidate -> out/index.html"
+              echo "Using candidate index: $candidate -> ${ROOT_INDEX}"
+              mkdir -p "$(dirname "${ROOT_INDEX}")"
+              cp "$candidate" "${ROOT_INDEX}"
             else
               anyhtml="$(find out -type f -name '*.html' | head -n 1 || true)"
               if [ -n "$anyhtml" ]; then
-                cp "$anyhtml" out/index.html
-                echo "Copied any html $anyhtml -> out/index.html"
+                echo "Using any HTML: $anyhtml -> ${ROOT_INDEX}"
+                mkdir -p "$(dirname "${ROOT_INDEX}")"
+                cp "$anyhtml" "${ROOT_INDEX}"
               else
-                echo "No HTML files found in out/ — cannot deploy to Pages."
+                echo "No HTML files found to use as index. Out contents:"
                 ls -la out || true
                 exit 1
               fi
             fi
           fi
 
-          # Ensure 404 exists
-          if [ ! -f out/404.html ]; then
+          # Try to ensure 404 exists (nice to have)
+          if [ "$IS_USER_PAGE" = true ]; then
+            NOTFOUND_DEST="out/404.html"
+          else
+            NOTFOUND_DEST="out/${REPO_NAME}/404.html"
+          fi
+          if [ ! -f "${NOTFOUND_DEST}" ]; then
             notfound="$(find out -type f -iname '*not-found*.html' -print -quit || true)"
             if [ -n "$notfound" ]; then
-              cp "$notfound" out/404.html
+              cp "$notfound" "${NOTFOUND_DEST}"
             fi
           fi
 
-          echo "Final out/ preview (depth 3):"
+          echo "Final tree (depth 3) under out/:"
           find out -maxdepth 3 -type d -print -exec ls -la {} \; || true
-          echo "HTML count:"
+          echo "HTML file count:"
           find out -type f -name '*.html' | wc -l || true
 
       - name: Upload Pages artifact
