@@ -5,9 +5,7 @@
 
 ## Built and owned by:
 
-[BartoszJarocki](https://github.com/BartoszJarocki/) (Original Creator)  :  https://github.com/BartoszJarocki/cv
-
-## Forked and edited by:
+Inspired from [BartoszJarocki](https://github.com/BartoszJarocki/cv)
 
 [Nuhman PK](https://github.com/nuhmanpk/) : https://github.com/nuhmanpk/portfolio
 

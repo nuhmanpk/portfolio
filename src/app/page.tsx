@@ -16,9 +16,15 @@ export default function Page() {
   const gravatarUrl = `https://www.gravatar.com/avatar/${md5(
     RESUME_DATA.contact.email
   )}?s=200`;
+
   const [visitorCount, setVisitorCount] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const [showUp, setShowUp] = useState(false);
+  const [rollingCount, setRollingCount] = useState(0);
+  const [hasRolled, setHasRolled] = useState(false);
+
+  // Fetch visitor count
   useEffect(() => {
     fetch(
       "https://api.visitorbadge.io/api/visitors?path=https://github.com/nuhmanpk/portfolio"
@@ -33,6 +39,36 @@ export default function Page() {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
+
+  // Scroll listener for up button and rolling count
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const bodyHeight = document.body.scrollHeight;
+      const nearBottom = scrollTop + windowHeight >= bodyHeight - 100;
+
+      setShowUp(nearBottom);
+
+      if (nearBottom && visitorCount && !hasRolled) {
+        setHasRolled(true);
+        let count = 0;
+        const target = Number(visitorCount);
+        const step = Math.ceil(target / 100);
+        const interval = setInterval(() => {
+          count += step;
+          if (count >= target) {
+            count = target;
+            clearInterval(interval);
+          }
+          setRollingCount(count);
+        }, 15);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [visitorCount, hasRolled]);
 
   return (
     <>
@@ -193,9 +229,7 @@ export default function Page() {
 
             {/* Skills */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">
-                Skills
-              </h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">Skills</h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {RESUME_DATA.skills.map((skill) => (
                   <div
@@ -210,9 +244,7 @@ export default function Page() {
 
             {/* Projects */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">
-                Projects
-              </h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">Projects</h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.projects.map((project) => (
                   <motion.div
@@ -233,9 +265,7 @@ export default function Page() {
 
             {/* Publications */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">
-                Publications
-              </h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">Publications</h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.publications.map((project) => (
                   <motion.div
@@ -256,9 +286,7 @@ export default function Page() {
 
             {/* Certifications */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">
-                Certifications
-              </h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">Certifications</h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.certifications.map((project) => (
                   <motion.div
@@ -279,9 +307,7 @@ export default function Page() {
 
             {/* Holopin Badges */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">
-                Holopin Badges
-              </h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">Holopin Badges</h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.holopins.map((holopin) => (
                   <motion.div
@@ -300,24 +326,48 @@ export default function Page() {
             </Section>
 
             {/* Footer */}
-            <footer className="mt-24 text-center text-sm text-muted-foreground">
-              <p>
-                The code is available on{" "}
-                <a
-                  href="https://github.com/nuhmanpk/portfolio"
-                  target="_blank"
-                  className="underline hover:text-primary hover:drop-shadow-md transition-all"
-                >
-                  GitHub
-                </a>
-                .
-              </p>
+            <footer className="mt-24 text-center text-sm text-muted-foreground relative">
+            <span>
+              Code on{" "}
+              <a
+                href="https://github.com/nuhmanpk/portfolio"
+                target="_blank"
+                className="underline hover:text-primary hover:drop-shadow-md transition-all"
+              >
+                GitHub
+              </a>
               {visitorCount && (
-                <p className="mt-4 text-sm text-muted-foreground">
-                  👀 {visitorCount} curious minds couldn’t resist peeking at
-                  this portfolio!
-                </p>
+                <>
+                  {" • "}
+                  {(() => {
+                    let emoji = "👀"; // default
+                    if (rollingCount % 1000 === 0) emoji = "🎉"; // every 1000th visitor
+                    else if (rollingCount % 500 === 0) emoji = "🚀"; // every 500th visitor
+                    else if (rollingCount % 100 === 0) emoji = "🌟"; // every 100th visitor
+                    else if (rollingCount % 10 === 0) emoji = "🦄"; // every 10th visitor
+                    else if ([1, 3, 7].includes(rollingCount % 10)) emoji = "🔥"; // special single digits
+
+                    return `${emoji} You are visitor #${rollingCount}!`;
+                  })()}
+                </>
               )}
+            </span>
+
+
+              {/* Scroll-to-top button */}
+              <AnimatePresence>
+                {showUp && (
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="fixed bottom-6 right-6 p-3 rounded-full bg-primary text-background shadow-lg hover:scale-110 transition-transform"
+                  >
+                    ↑
+                  </motion.button>
+                )}
+              </AnimatePresence>
             </footer>
           </motion.section>
         </main>
