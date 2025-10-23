@@ -20,10 +20,10 @@ jobs:
     env:
       BIRTHDATE: ${{ secrets.BIRTHDATE }}
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -45,16 +45,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build with Next.js
+      - name: Build Next.js site
         run: npm run build
 
-      - name: Export static files
-        run: npm run export
-
-      - name: Upload artifact
+      - name: Upload static site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: .next/output/static
 
   deploy:
     environment:
