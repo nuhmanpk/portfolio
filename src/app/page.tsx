@@ -82,7 +82,7 @@ export default function Page() {
               ))}
             </div>
           </div>
-          <Avatar className="h-32 w-32">
+          <Avatar className="hidden md:block h-32 w-32">
             <AvatarImage alt={RESUME_DATA.name} src={gravatarUrl} />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
