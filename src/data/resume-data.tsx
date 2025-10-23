@@ -5,6 +5,7 @@ import { skills } from "./skills";
 import { projects } from "./projects";
 import { publications } from "./publications";
 import { certifications } from "./certifications";
+import { holopins } from "./holopin";
 import { getDynamicAge } from "../utils/getAge";
 
 export const RESUME_DATA = {
@@ -25,5 +26,6 @@ export const RESUME_DATA = {
   skills: skills,
   projects: projects,
   publications: publications,
-  certifications: certifications
+  certifications: certifications,
+  holopins: holopins
 } as const;
