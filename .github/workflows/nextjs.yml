@@ -53,22 +53,23 @@ jobs:
           set -euo pipefail
           rm -rf out
           mkdir -p out
+
+          echo "Prefer .next/output/static"
           if [ -d ".next/output/static" ]; then
             cp -a .next/output/static/. out/
+            echo "Used .next/output/static"
           elif [ -d ".next/output" ]; then
             cp -a .next/output/. out/
+            echo "Used .next/output"
           elif [ -d ".next/server" ]; then
+            echo "Collecting from .next/server"
             mkdir -p out
             if [ -d ".next/server/app" ]; then
               find .next/server/app -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
                 rel="${f#.next/server/app/}"
                 dest="out/${rel}"
-                if [ "$rel" = "index.html" ]; then
-                  cp "$f" out/index.html
-                else
-                  mkdir -p "$(dirname "$dest")"
-                  cp "$f" "$dest"
-                fi
+                mkdir -p "$(dirname "$dest")"
+                cp "$f" "$dest"
               done
             fi
             if [ -d ".next/server/pages" ]; then
@@ -76,11 +77,13 @@ jobs:
                 cp "$f" "out/$(basename "$f")"
               done
             fi
+            # copy _next static assets (if present)
             if [ -d ".next/server/static" ]; then
               mkdir -p out/_next
               cp -a .next/server/static out/_next/static
             fi
           elif [ -n "$(find .next -type f -name '*.html' -print -quit || true)" ]; then
+            echo "Collecting loose HTML under .next"
             find .next -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
               dest="out/${f#.next/}"
               mkdir -p "$(dirname "$dest")"
@@ -91,30 +94,42 @@ jobs:
               cp -a .next/static out/_next/static
             fi
           else
+            echo "No static output found under .next. Listing .next for debugging:"
             ls -la .next || true
+            echo "Build may have produced server-only output (not compatible with GitHub Pages)."
             exit 1
           fi
+
+          # Ensure there's an index.html at site root
           if [ ! -f out/index.html ]; then
             candidate="$(find out -type f -name 'index.html' | head -n 1 || true)"
             if [ -n "$candidate" ]; then
               cp "$candidate" out/index.html
+              echo "Copied candidate index: $candidate -> out/index.html"
             else
               anyhtml="$(find out -type f -name '*.html' | head -n 1 || true)"
               if [ -n "$anyhtml" ]; then
                 cp "$anyhtml" out/index.html
+                echo "Copied any html $anyhtml -> out/index.html"
               else
+                echo "No HTML files found in out/ — cannot deploy to Pages."
                 ls -la out || true
                 exit 1
               fi
             fi
           fi
+
+          # Ensure 404 exists
           if [ ! -f out/404.html ]; then
             notfound="$(find out -type f -iname '*not-found*.html' -print -quit || true)"
             if [ -n "$notfound" ]; then
               cp "$notfound" out/404.html
             fi
           fi
+
+          echo "Final out/ preview (depth 3):"
           find out -maxdepth 3 -type d -print -exec ls -la {} \; || true
+          echo "HTML count:"
           find out -type f -name '*.html' | wc -l || true
 
       - name: Upload Pages artifact

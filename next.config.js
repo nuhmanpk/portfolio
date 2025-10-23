@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: 'export',
-}
+const repo = '/portfolio'; // replace with your repo name prefix ("/REPO_NAME") if different
 
-module.exports = nextConfig
+const nextConfig = {
+  output: 'export',
+  basePath: repo,
+  assetPrefix: `${repo}/`,   // ensures assets are referenced under /portfolio/_next/...
+  images: {
+    unoptimized: true
+  },
+};
+
+module.exports = nextConfig;
