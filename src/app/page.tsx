@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon } from "lucide-react";
@@ -13,12 +13,16 @@ import HeroAnimation from "@/components/loader";
 import { useEffect, useState } from "react";
 
 export default function Page() {
-  const gravatarUrl = `https://www.gravatar.com/avatar/${md5(RESUME_DATA.contact.email)}?s=200`;
+  const gravatarUrl = `https://www.gravatar.com/avatar/${md5(
+    RESUME_DATA.contact.email
+  )}?s=200`;
   const [visitorCount, setVisitorCount] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://api.visitorbadge.io/api/visitors?path=https://github.com/nuhmanpk/portfolio")
+    fetch(
+      "https://api.visitorbadge.io/api/visitors?path=https://github.com/nuhmanpk/portfolio"
+    )
       .then((res) => res.text())
       .then((data) => {
         const match = data.match(/<title>VISITORS: (\d+)<\/title>/);
@@ -118,7 +122,9 @@ export default function Page() {
 
             {/* About Section */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">About</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                About
+              </h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 {RESUME_DATA.summary}
               </p>
@@ -126,7 +132,9 @@ export default function Page() {
 
             {/* Work Experience */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Work Experience</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Work Experience
+              </h2>
               <div className="mt-4 space-y-4">
                 {RESUME_DATA.work.map((work) => (
                   <motion.div
@@ -136,14 +144,20 @@ export default function Page() {
                   >
                     <div className="flex items-center justify-between">
                       <h3 className="text-lg font-bold text-primary">
-                        <a href={work.link} className="hover:underline">{work.company}</a>
+                        <a href={work.link} className="hover:underline">
+                          {work.company}
+                        </a>
                       </h3>
                       <p className="text-sm text-muted-foreground">
                         {work.start} - {work.end}
                       </p>
                     </div>
-                    <h4 className="mt-1 text-base font-semibold text-muted-foreground">{work.title}</h4>
-                    <p className="mt-2 text-sm text-muted-foreground">{work.description}</p>
+                    <h4 className="mt-1 text-base font-semibold text-muted-foreground">
+                      {work.title}
+                    </h4>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {work.description}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -151,7 +165,9 @@ export default function Page() {
 
             {/* Education */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Education</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Education
+              </h2>
               <div className="mt-4 space-y-4">
                 {RESUME_DATA.education.map((education) => (
                   <motion.div
@@ -160,10 +176,16 @@ export default function Page() {
                     whileHover={{ scale: 1.01 }}
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-bold text-primary">{education.school}</h3>
-                      <p className="text-sm text-muted-foreground">{education.start} - {education.end}</p>
+                      <h3 className="text-lg font-bold text-primary">
+                        {education.school}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {education.start} - {education.end}
+                      </p>
                     </div>
-                    <h4 className="mt-1 text-base font-semibold text-muted-foreground">{education.degree}</h4>
+                    <h4 className="mt-1 text-base font-semibold text-muted-foreground">
+                      {education.degree}
+                    </h4>
                   </motion.div>
                 ))}
               </div>
@@ -171,20 +193,33 @@ export default function Page() {
 
             {/* Skills */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Skills</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Skills
+              </h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {RESUME_DATA.skills.map((skill) => (
-                  <div key={skill} className="rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground transition-all hover:drop-shadow-lg">{skill}</div>
+                  <div
+                    key={skill}
+                    className="rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground transition-all hover:drop-shadow-lg"
+                  >
+                    {skill}
+                  </div>
                 ))}
               </div>
             </Section>
 
             {/* Projects */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Projects</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Projects
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.projects.map((project) => (
-                  <motion.div key={project.title} whileHover={{ scale: 1.02 }} className="transition-all hover:drop-shadow-xl">
+                  <motion.div
+                    key={project.title}
+                    whileHover={{ scale: 1.02 }}
+                    className="transition-all hover:drop-shadow-xl"
+                  >
                     <ProjectCard
                       title={project.title}
                       description={project.description}
@@ -198,10 +233,16 @@ export default function Page() {
 
             {/* Publications */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Publications</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Publications
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.publications.map((project) => (
-                  <motion.div key={project.title} whileHover={{ scale: 1.02 }} className="transition-all hover:drop-shadow-xl">
+                  <motion.div
+                    key={project.title}
+                    whileHover={{ scale: 1.02 }}
+                    className="transition-all hover:drop-shadow-xl"
+                  >
                     <ProjectCard
                       title={project.title}
                       description={project.description}
@@ -215,10 +256,16 @@ export default function Page() {
 
             {/* Certifications */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Certifications</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Certifications
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.certifications.map((project) => (
-                  <motion.div key={project.title} whileHover={{ scale: 1.02 }} className="transition-all hover:drop-shadow-xl">
+                  <motion.div
+                    key={project.title}
+                    whileHover={{ scale: 1.02 }}
+                    className="transition-all hover:drop-shadow-xl"
+                  >
                     <ProjectCard
                       title={project.title}
                       description={project.description}
@@ -232,10 +279,16 @@ export default function Page() {
 
             {/* Holopin Badges */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Holopin Badges</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Holopin Badges
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.holopins.map((holopin) => (
-                  <motion.div key={holopin.title} whileHover={{ scale: 1.02 }} className="transition-all hover:drop-shadow-xl">
+                  <motion.div
+                    key={holopin.title}
+                    whileHover={{ scale: 1.02 }}
+                    className="transition-all hover:drop-shadow-xl"
+                  >
                     <HolopinCard
                       title={holopin.title}
                       description={holopin.description}
@@ -250,17 +303,21 @@ export default function Page() {
             <footer className="mt-24 text-center text-sm text-muted-foreground">
               <p>
                 The code is available on{" "}
-                <a href="https://github.com/nuhmanpk/portfolio" target="_blank" className="underline hover:text-primary hover:drop-shadow-md transition-all">
+                <a
+                  href="https://github.com/nuhmanpk/portfolio"
+                  target="_blank"
+                  className="underline hover:text-primary hover:drop-shadow-md transition-all"
+                >
                   GitHub
-                </a>.
+                </a>
+                .
               </p>
-                {visitorCount && (
-                  <p className="mt-4 text-sm text-muted-foreground">
-                    👀 {visitorCount} curious minds couldn’t resist peeking at this portfolio!
-                  </p>
-                )}
-
-                </p>}
+              {visitorCount && (
+                <p className="mt-4 text-sm text-muted-foreground">
+                  👀 {visitorCount} curious minds couldn’t resist peeking at
+                  this portfolio!
+                </p>
+              )}
             </footer>
           </motion.section>
         </main>
