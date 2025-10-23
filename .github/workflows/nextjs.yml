@@ -48,10 +48,56 @@ jobs:
       - name: Build Next.js site
         run: npm run build
 
-      - name: Upload static site artifact
+      - name: Prepare artifact for Pages
+        run: |
+          set -euo pipefail
+          rm -rf out
+          mkdir -p out
+          echo "Looking for Next.js static output..."
+          # Preferred export path for Next 14 static export
+          if [ -d ".next/output/static" ]; then
+            echo "Found .next/output/static -> copying to out/"
+            cp -a .next/output/static/. out/
+          # fallback to full output folder if present
+          elif [ -d ".next/output" ]; then
+            echo "Found .next/output -> copying to out/"
+            cp -a .next/output/. out/
+          # If Next wrote HTML files somewhere else in .next, collect them + assets
+          elif [ -n "$(find .next -type f -name '*.html' -print -quit || true)" ]; then
+            echo "Found HTML files under .next -> collecting into out/"
+            # Copy all html files preserving directory structure under out/
+            find .next -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
+              dest="out/${f#.next/}"
+              mkdir -p "$(dirname "$dest")"
+              cp "$f" "$dest"
+            done
+            # Copy Next static assets if any
+            if [ -d ".next/static" ]; then
+              mkdir -p out/_next
+              cp -a .next/static out/_next/static
+            fi
+            # Copy other static asset folders that Next might produce
+            if [ -d ".next/standalone" ]; then
+              cp -a .next/standalone out/standalone || true
+            fi
+          else
+            echo "No static output found under .next. Listing .next contents for debugging:"
+            ls -la .next || true
+            echo "Build may have produced server-only output (not compatible with GitHub Pages)."
+            exit 1
+          fi
+
+          # Ensure there is at least an index.html (GitHub Pages requirement)
+          if [ -z "$(find out -maxdepth 2 -type f -name 'index.html' -print -quit || true)" ]; then
+            echo "WARNING: no index.html found in out/ — deployment may be invalid for Pages."
+            echo "Contents of out/:"
+            ls -la out || true
+          fi
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .next/output   # <- fixed path
+          path: out
 
   deploy:
     environment:
