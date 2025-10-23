@@ -1,184 +1,88 @@
+# Sample workflow for building and deploying a Next.js site to GitHub Pages
+#
+# To get started with Next.js see: https://nextjs.org/docs/getting-started
+#
 name: Deploy Next.js site to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
     env:
       BIRTHDATE: ${{ secrets.BIRTHDATE }}
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: npm
-
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
+          # Automatically inject basePath in your Next.js configuration file and disable
+          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
+          #
+          # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
-
       - name: Restore cache
         uses: actions/cache@v3
         with:
-          path: .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          path: |
+            .next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
-        run: npm ci
-
-      - name: Build Next.js site
-        run: npm run build
-
-      - name: Prepare artifact for Pages (place files under repo path)
-        run: |
-          set -euo pipefail
-
-          # repo name (e.g. "portfolio") and decide if this is a repo page or a user/org page
-          REPO_NAME="${GITHUB_REPOSITORY##*/}"
-          IS_USER_PAGE=false
-          if echo "$REPO_NAME" | grep -Eq '\.github\.io$'; then
-            IS_USER_PAGE=true
-          fi
-
-          # target directory inside out/
-          if [ "$IS_USER_PAGE" = true ]; then
-            TARGET="out"
-          else
-            TARGET="out/${REPO_NAME}"
-          fi
-
-          rm -rf out
-          mkdir -p "${TARGET}"
-
-          echo "Repo: ${REPO_NAME}, user-page: ${IS_USER_PAGE}, target: ${TARGET}"
-
-          copy_into_target() {
-            src="$1"
-            echo "Copying from '$src' -> '${TARGET}/'"
-            cp -a "$src"/. "${TARGET}/"
-          }
-
-          # Prefer the canonical Next static output
-          if [ -d ".next/output/static" ]; then
-            copy_into_target ".next/output/static"
-          elif [ -d ".next/output" ]; then
-            copy_into_target ".next/output"
-          elif [ -d ".next/server" ]; then
-            echo "Collecting from .next/server..."
-            # copy server app/html into target preserving structure
-            if [ -d ".next/server/app" ]; then
-              find .next/server/app -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
-                rel="${f#.next/server/app/}"
-                dest="${TARGET}/${rel}"
-                mkdir -p "$(dirname "$dest")"
-                cp "$f" "$dest"
-              done
-            fi
-            # top-level pages (404, 500)
-            if [ -d ".next/server/pages" ]; then
-              find .next/server/pages -maxdepth 1 -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
-                cp "$f" "${TARGET}/$(basename "$f")"
-              done
-            fi
-            # copy any _next static produced under server
-            if [ -d ".next/server/static" ]; then
-              mkdir -p "${TARGET}/_next"
-              cp -a .next/server/static "${TARGET}/_next/static"
-            fi
-          elif [ -n "$(find .next -type f -name '*.html' -print -quit || true)" ]; then
-            echo "Collecting loose HTML under .next"
-            find .next -type f -name '*.html' -print0 | while IFS= read -r -d '' f; do
-              dest="${TARGET}/${f#.next/}"
-              mkdir -p "$(dirname "$dest")"
-              cp "$f" "$dest"
-            done
-            if [ -d ".next/static" ]; then
-              mkdir -p "${TARGET}/_next"
-              cp -a .next/static "${TARGET}/_next/static"
-            fi
-          else
-            echo "No static output found under .next. Listing .next for debugging:"
-            ls -la .next || true
-            echo "Build may have produced server-only output (not compatible with GitHub Pages)."
-            exit 1
-          fi
-
-          # Ensure public/ static files are copied (if used)
-          if [ -d "public" ]; then
-            mkdir -p "${TARGET}/public" || true
-            cp -a public/. "${TARGET}/public" || true
-          fi
-
-          # Ensure root index.html exists at the repo path (Pages requires index at path root)
-          if [ "$IS_USER_PAGE" = true ]; then
-            ROOT_INDEX="out/index.html"
-          else
-            ROOT_INDEX="out/${REPO_NAME}/index.html"
-          fi
-
-          if [ ! -f "${ROOT_INDEX}" ]; then
-            echo "No index.html at ${ROOT_INDEX} — searching candidates..."
-            candidate="$(find out -type f -name 'index.html' | head -n 1 || true)"
-            if [ -n "$candidate" ]; then
-              echo "Using candidate index: $candidate -> ${ROOT_INDEX}"
-              mkdir -p "$(dirname "${ROOT_INDEX}")"
-              cp "$candidate" "${ROOT_INDEX}"
-            else
-              anyhtml="$(find out -type f -name '*.html' | head -n 1 || true)"
-              if [ -n "$anyhtml" ]; then
-                echo "Using any HTML: $anyhtml -> ${ROOT_INDEX}"
-                mkdir -p "$(dirname "${ROOT_INDEX}")"
-                cp "$anyhtml" "${ROOT_INDEX}"
-              else
-                echo "No HTML files found to use as index. Out contents:"
-                ls -la out || true
-                exit 1
-              fi
-            fi
-          fi
-
-          # Try to ensure 404 exists (nice to have)
-          if [ "$IS_USER_PAGE" = true ]; then
-            NOTFOUND_DEST="out/404.html"
-          else
-            NOTFOUND_DEST="out/${REPO_NAME}/404.html"
-          fi
-          if [ ! -f "${NOTFOUND_DEST}" ]; then
-            notfound="$(find out -type f -iname '*not-found*.html' -print -quit || true)"
-            if [ -n "$notfound" ]; then
-              cp "$notfound" "${NOTFOUND_DEST}"
-            fi
-          fi
-
-          echo "Final tree (depth 3) under out/:"
-          find out -maxdepth 3 -type d -print -exec ls -la {} \; || true
-          echo "HTML file count:"
-          find out -type f -name '*.html' | wc -l || true
-
-      - name: Upload Pages artifact
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build 
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: ./out
 
+  # Deployment job
   deploy:
     environment:
       name: github-pages
