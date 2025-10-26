@@ -328,13 +328,13 @@ export default function Page() {
             {/* Footer */}
             <footer className="mt-24 text-center text-sm text-muted-foreground relative">
             <span>
-              Code on{" "}
+              This site is open source {" "}
               <a
                 href="https://github.com/nuhmanpk/portfolio"
                 target="_blank"
                 className="underline hover:text-primary hover:drop-shadow-md transition-all"
               >
-                GitHub
+                Improve this page
               </a>
               {visitorCount && (
                 <>
@@ -347,7 +347,7 @@ export default function Page() {
                     else if (rollingCount % 10 === 0) emoji = "🦄"; // every 10th visitor
                     else if ([1, 3, 7].includes(rollingCount % 10)) emoji = "🔥"; // special single digits
 
-                    return `${emoji} You are visitor #${rollingCount}!`;
+                    return `\n ${emoji} You are visitor #${rollingCount}!`;
                   })()}
                 </>
               )}
