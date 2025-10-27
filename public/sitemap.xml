@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <!-- Portfolio main page -->
+  <url>
+    <loc>https://nuhmanpk.github.io/portfolio/</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Projects section -->
+  <url>
+    <loc>https://nuhmanpk.github.io/portfolio/projects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Certifications section -->
+  <url>
+    <loc>https://nuhmanpk.github.io/portfolio/certifications</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- External professional profiles -->
+  <url>
+    <loc>https://github.com/nuhmanpk</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://www.linkedin.com/in/nuhmanpk/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+</urlset>

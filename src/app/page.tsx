@@ -1,4 +1,5 @@
 "use client";
+import Head from "next/head";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon } from "lucide-react";
@@ -19,12 +20,24 @@ export default function Page() {
 
   const [visitorCount, setVisitorCount] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-
   const [showUp, setShowUp] = useState(false);
   const [rollingCount, setRollingCount] = useState(0);
   const [hasRolled, setHasRolled] = useState(false);
+  const [localVisits, setLocalVisits] = useState<number>(0);
 
-  // Fetch visitor count
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nuhman PK",
+    "url": "https://nuhmanpk.github.io/portfolio",
+    "jobTitle": "Software Engineer",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHsj5-yhlVfdQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719462659919?e=1762992000&v=beta&t=2x4zUevN0KkfBRv6gDJBcsrrRFV9EjsVZwVGVxq7fpc",
+    "sameAs": [
+      "https://github.com/nuhmanpk",
+      "https://www.linkedin.com/in/nuhmanpk/"
+    ]
+  };
+
   useEffect(() => {
     fetch(
       "https://api.visitorbadge.io/api/visitors?path=https://github.com/nuhmanpk/portfolio"
@@ -36,18 +49,20 @@ export default function Page() {
       })
       .catch(() => setVisitorCount(null));
 
+    const visits = localStorage.getItem("visit-count");
+    const updated = visits ? parseInt(visits) + 1 : 1;
+    localStorage.setItem("visit-count", updated.toString());
+    setLocalVisits(updated);
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Scroll listener for up button and rolling count
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const bodyHeight = document.body.scrollHeight;
       const nearBottom = scrollTop + windowHeight >= bodyHeight - 100;
-
       setShowUp(nearBottom);
 
       if (nearBottom && visitorCount && !hasRolled) {
@@ -70,9 +85,78 @@ export default function Page() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [visitorCount, hasRolled]);
 
+  useEffect(() => {
+  if (typeof window !== "undefined") {
+    // console.clear();
+    const styleTitle = `
+      color: #00bfa5;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: monospace;
+    `;
+    const styleSub = `
+      color: #ffffff;
+      background: #00bfa5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    `;
+    const styleLink = `
+      color: #0077ff;
+      text-decoration: underline;
+      font-family: monospace;
+    `;
+
+    console.log("%c💼 HIRE ME for your next big project!", styleTitle);
+    console.log("%c✨ Crafted with ❤️ by NUHMAN using Next.js 🚀", styleSub);
+    console.log("%c🌐 Portfolio: https://nuhmanpk.github.io/portfolio", styleLink);
+    console.log("%c🐙 GitHub: https://github.com/nuhmanpk", styleLink);
+    console.log("%c🔗 LinkedIn: https://www.linkedin.com/in/nuhmanpk/", styleLink);
+  }
+}, []);
+
+
   return (
     <>
-      {/* Loader Overlay */}
+      <Head>
+        <title>Nuhman PK | Software Engineer</title>
+        <meta
+          name="description"
+          content="Portfolio of Nuhman PK — software engineer specialized in building high-performance web applications with React, Next.js, and Node.js."
+        />
+        <link rel="canonical" href="https://nuhmanpk.github.io/portfolio" />
+
+        <meta property="og:title" content="Nuhman PK | Software Engineer" />
+        <meta
+          property="og:description"
+          content="Explore Nuhman PK’s work, projects, and professional experience."
+        />
+        <meta
+          property="og:image"
+          content="https://media.licdn.com/dms/image/D4D03AQGxxxxxxxx/profile-displayphoto-shrink_800_800/0/xxxxx"
+        />
+        <meta property="og:url" content="https://nuhmanpk.github.io/portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Nuhman PK Portfolio" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Nuhman PK | Software Engineer" />
+        <meta
+          name="twitter:description"
+          content="Full-stack engineer portfolio — Next.js, React, and Node.js."
+        />
+        <meta
+          name="twitter:image"
+          content="https://media.licdn.com/dms/image/D4D03AQGxxxxxxxx/profile-displayphoto-shrink_800_800/0/xxxxx"
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </Head>
+
       <AnimatePresence>
         {loading && (
           <motion.div
@@ -87,9 +171,10 @@ export default function Page() {
         )}
       </AnimatePresence>
 
-      {/* Main Content */}
       {!loading && (
-        <main className="container relative mx-auto scroll-my-12 p-4 print:p-12 md:p-16">
+        // <main className="container relative mx-auto scroll-my-12 p-4 print:p-12 md:p-16">
+        <main className="container relative mx-auto scroll-my-12 p-4 pb-8 print:p-12 md:p-16 md:pb-8">
+
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,12 +236,14 @@ export default function Page() {
               </div>
 
               <Avatar className="hidden md:block h-32 w-32 hover:drop-shadow-xl transition-all duration-300">
-                <AvatarImage alt={RESUME_DATA.name} src={gravatarUrl} />
+                <AvatarImage
+                  alt={`${RESUME_DATA.name} profile photo`}
+                  src={gravatarUrl}
+                />
                 <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
               </Avatar>
             </div>
 
-            {/* About Section */}
             <Section>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 About
@@ -166,7 +253,6 @@ export default function Page() {
               </p>
             </Section>
 
-            {/* Work Experience */}
             <Section>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Work Experience
@@ -174,7 +260,7 @@ export default function Page() {
               <div className="mt-4 space-y-4">
                 {RESUME_DATA.work.map((work) => (
                   <motion.div
-                    key={work.company}
+                    key={work.title}
                     className="rounded-lg border p-4 transition-all hover:drop-shadow-lg hover:border-primary/30"
                     whileHover={{ scale: 1.01 }}
                   >
@@ -199,7 +285,6 @@ export default function Page() {
               </div>
             </Section>
 
-            {/* Education */}
             <Section>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Education
@@ -227,9 +312,10 @@ export default function Page() {
               </div>
             </Section>
 
-            {/* Skills */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Skills</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Skills
+              </h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {RESUME_DATA.skills.map((skill) => (
                   <div
@@ -242,9 +328,10 @@ export default function Page() {
               </div>
             </Section>
 
-            {/* Projects */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Projects</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Projects
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.projects.map((project) => (
                   <motion.div
@@ -263,9 +350,10 @@ export default function Page() {
               </div>
             </Section>
 
-            {/* Publications */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Publications</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Publications
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.publications.map((project) => (
                   <motion.div
@@ -284,9 +372,10 @@ export default function Page() {
               </div>
             </Section>
 
-            {/* Certifications */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Certifications</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Certifications
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.certifications.map((project) => (
                   <motion.div
@@ -305,9 +394,10 @@ export default function Page() {
               </div>
             </Section>
 
-            {/* Holopin Badges */}
             <Section>
-              <h2 className="text-2xl font-bold tracking-tight text-primary">Holopin Badges</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-primary">
+                Holopin Badges
+              </h2>
               <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
                 {RESUME_DATA.holopins.map((holopin) => (
                   <motion.div
@@ -325,43 +415,47 @@ export default function Page() {
               </div>
             </Section>
 
-            {/* Footer */}
             <footer className="mt-24 text-center text-sm text-muted-foreground relative">
-            <span>
-              This site is open source {" "}
-              <a
-                href="https://github.com/nuhmanpk/portfolio"
-                target="_blank"
-                className="underline hover:text-primary hover:drop-shadow-md transition-all"
-              >
-                Improve this page
-              </a>
-              {visitorCount && (
-                <>
-                  {" • "}
-                  {(() => {
-                    let emoji = "👀"; // default
-                    if (rollingCount % 1000 === 0) emoji = "🎉"; // every 1000th visitor
-                    else if (rollingCount % 500 === 0) emoji = "🚀"; // every 500th visitor
-                    else if (rollingCount % 100 === 0) emoji = "🌟"; // every 100th visitor
-                    else if (rollingCount % 10 === 0) emoji = "🦄"; // every 10th visitor
-                    else if ([1, 3, 7].includes(rollingCount % 10)) emoji = "🔥"; // special single digits
+              <span>
+                    🌍 Your visits: {localVisits}
+                {visitorCount && (
+                  <>
+                    <br/>
+                    {(() => {
+                      let emoji = "👀";
+                      if (rollingCount % 1000 === 0) emoji = "🎉";
+                      else if (rollingCount % 500 === 0) emoji = "🚀";
+                      else if (rollingCount % 100 === 0) emoji = "🌟";
+                      else if (rollingCount % 10 === 0) emoji = "🦄";
+                      else if ([1, 3, 7].includes(rollingCount % 10)) emoji = "🔥";
+                      return `\n ${emoji} Total Portfolio Views #${rollingCount}!`;
+                    })()}
 
-                    return `\n ${emoji} You are visitor #${rollingCount}!`;
-                  })()}
-                </>
-              )}
-            </span>
+                  </>
+                )}
+              </span>
+              <br/>
+              <span>
+                This site is open source{" "}
+                <a
+                  href="https://github.com/nuhmanpk/portfolio"
+                  target="_blank"
+                  className="underline hover:text-primary hover:drop-shadow-md transition-all"
+                >
+                  Improve this page
+                </a>
+                
+              </span>
 
-
-              {/* Scroll-to-top button */}
               <AnimatePresence>
                 {showUp && (
                   <motion.button
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     className="fixed bottom-6 right-6 p-3 rounded-full bg-primary text-background shadow-lg hover:scale-110 transition-transform"
                   >
                     ↑
