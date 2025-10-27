@@ -107,11 +107,15 @@ export default function Page() {
       font-family: monospace;
     `;
 
-    console.log("%c💼 HIRE ME for your next big project!", styleTitle);
-    console.log("%c✨ Crafted with ❤️ by NUHMAN using Next.js 🚀", styleSub);
-    console.log("%c🌐 Portfolio: https://nuhmanpk.github.io/portfolio", styleLink);
-    console.log("%c🐙 GitHub: https://github.com/nuhmanpk", styleLink);
-    console.log("%c🔗 LinkedIn: https://www.linkedin.com/in/nuhmanpk/", styleLink);
+  console.log("%c💼 HIRE ME for your next big project!", styleTitle);
+  console.log("%c✨ Crafted with ❤️ by NUHMAN using Next.js 🚀", styleSub);
+  console.log("%c🌐 Portfolio: https://nuhmanpk.github.io/portfolio", styleLink);
+  console.log("%c🐙 GitHub: https://github.com/nuhmanpk", styleLink);
+  console.log("%c🔗 LinkedIn: https://www.linkedin.com/in/nuhmanpk/", styleLink);
+  console.log("%c🤓 Oh, look at you — the DevTools detective! Not everyone ends up here, you’re clearly built different.", styleSub);
+  console.log("%c🔥 And hey, if you find any error (other than a Vercel one 😅), be kind — fix it or hit me up on LinkedIn. Great minds debug alike!", styleLink);
+  console.log("%c💰 Oh, and if you happen to be someone with a *better offer*, stop reading console logs and DM me ASAP. 😎", styleTitle);
+
   }
 }, []);
 
