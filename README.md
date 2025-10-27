@@ -13,7 +13,7 @@
 ### 🧠 About
 
 This is my personal portfolio built with **Next.js**, **TailwindCSS**, and **Framer Motion** — designed to showcase my projects, experience, and open-source contributions.  
-Inspired by [BartoszJarocki](https://github.com/BartoszJarocki/cv).
+Inspired by [BartoszJarocki](https://cv.jarocki.me/).
 
 🔗 **Live:** [nuhmanpk.github.io/portfolio](https://nuhmanpk.github.io/portfolio)
 
