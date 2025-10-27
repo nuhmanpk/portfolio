@@ -11,9 +11,16 @@ export const skills = [
   "Web Scraping",
   "Browser Automation",
   "Puppeteer",
-  "BeautifulSoup",
+  "Selenium",
   "MongoDB",
+  "SQL",
   "Machine Learning",
   "Computervision",
-  "GenAI Development"
+  "GenAI Development",
+  "Docker",
+  "Aws",
+  "Pytorch",
+  "Langchain",
+  "Rag",
+  "Agents"
 ];
