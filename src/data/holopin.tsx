@@ -39,4 +39,9 @@ export const holopins = [
         description: "A surprise from DigitalOcean for Hacktoberfest participants. Thank you for contributing to open-source!",
         link: "https://www.holopin.io/userbadge/clnijtey557810fmnkf4k022a",
     },
+    {
+        title: "Holopin x Hacktoberfest: 5 Badge Club",
+        description: "This badge is awarded to people who earned at least 5 Hacktoberfest badges since 2022.",
+        link: "https://www.holopin.io/userbadge/cmha0535r002sjo04b03s2unr",
+    },
 ];
