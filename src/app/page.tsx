@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Section } from "@/components/ui/section";
-import { GlobeIcon, MailIcon } from "lucide-react";
+import { ChevronDown, ChevronUp, GlobeIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import md5 from "md5";
 import HeroAnimation from "@/components/loader";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const gravatarUrl = `https://www.gravatar.com/avatar/${md5(
@@ -24,6 +24,8 @@ export default function Page() {
   const [rollingCount, setRollingCount] = useState(0);
   const [hasRolled, setHasRolled] = useState(false);
   const [localVisits, setLocalVisits] = useState<number>(0);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  const [currentSection, setCurrentSection] = useState(0);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -86,38 +88,45 @@ export default function Page() {
   }, [visitorCount, hasRolled]);
 
   useEffect(() => {
-  if (typeof window !== "undefined") {
-    // console.clear();
-    const styleTitle = `
+    if (typeof window !== "undefined") {
+      // console.clear();
+      const styleTitle = `
       color: #00bfa5;
       font-size: 20px;
       font-weight: bold;
       font-family: monospace;
     `;
-    const styleSub = `
+      const styleSub = `
       color: #ffffff;
       background: #00bfa5;
       padding: 2px 6px;
       border-radius: 4px;
       font-family: monospace;
     `;
-    const styleLink = `
+      const styleLink = `
       color: #0077ff;
       text-decoration: underline;
       font-family: monospace;
     `;
 
-  console.log("%c💼 HIRE ME for your next big project!", styleTitle);
-  console.log("%c✨ Crafted with ❤️ by NUHMAN using Next.js 🚀", styleSub);
-  console.log("%c🌐 Portfolio: https://nuhmanpk.github.io/portfolio", styleLink);
-  console.log("%c🐙 GitHub: https://github.com/nuhmanpk", styleLink);
-  console.log("%c🔗 LinkedIn: https://www.linkedin.com/in/nuhmanpk/", styleLink);
-  console.log("%c🤓 Oh, look at you — the DevTools detective! Not everyone ends up here, you’re clearly built different.", styleSub);
-  console.log("%c🔥 And hey, if you find any error (other than a Vercel one 😅), be kind — fix it or hit me up on LinkedIn. Great minds debug alike!", styleLink);
-  console.log("%c💰 Oh, and if you happen to be someone with a *better offer*, stop reading console logs and DM me ASAP. 😎", styleTitle);
+      console.log("%c💼 HIRE ME for your next big project!", styleTitle);
+      console.log("%c✨ Crafted with ❤️ by NUHMAN using Next.js 🚀", styleSub);
+      console.log("%c🌐 Portfolio: https://nuhmanpk.github.io/portfolio", styleLink);
+      console.log("%c🐙 GitHub: https://github.com/nuhmanpk", styleLink);
+      console.log("%c🔗 LinkedIn: https://www.linkedin.com/in/nuhmanpk/", styleLink);
+      console.log("%c🤓 Oh, look at you — the DevTools detective! Not everyone ends up here, you’re clearly built different.", styleSub);
+      console.log("%c🔥 And hey, if you find any error (other than a Vercel one 😅), be kind — fix it or hit me up on LinkedIn. Great minds debug alike!", styleLink);
+      console.log("%c💰 Oh, and if you happen to be someone with a *better offer*, stop reading console logs and DM me ASAP. 😎", styleTitle);
 
-  }
-}, []);
+    }
+  }, []);
+
+  const handleScrollNext = () => {
+    if (!sectionRefs.current.length) return;
+    const nextIndex = (currentSection + 1) % sectionRefs.current.length;
+    setCurrentSection(nextIndex);
+    sectionRefs.current[nextIndex]?.scrollIntoView({ behavior: "smooth" });
+  };
 
 
   return (
@@ -248,7 +257,8 @@ export default function Page() {
               </Avatar>
             </div>
 
-            <Section>
+
+            <Section ref={(el) => (sectionRefs.current[0] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 About
               </h2>
@@ -257,7 +267,7 @@ export default function Page() {
               </p>
             </Section>
 
-            <Section>
+            <Section ref={(el) => (sectionRefs.current[1] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Work Experience
               </h2>
@@ -289,7 +299,7 @@ export default function Page() {
               </div>
             </Section>
 
-            <Section>
+            <Section ref={(el) => (sectionRefs.current[2] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Education
               </h2>
@@ -316,7 +326,7 @@ export default function Page() {
               </div>
             </Section>
 
-            <Section>
+            <Section ref={(el) => (sectionRefs.current[3] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Skills
               </h2>
@@ -332,7 +342,7 @@ export default function Page() {
               </div>
             </Section>
 
-            <Section>
+            <Section ref={(el) => (sectionRefs.current[4] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Projects
               </h2>
@@ -354,7 +364,7 @@ export default function Page() {
               </div>
             </Section>
 
-            <Section>
+            <Section ref={(el) => (sectionRefs.current[5] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Publications
               </h2>
@@ -376,7 +386,7 @@ export default function Page() {
               </div>
             </Section>
 
-            <Section>
+            <Section ref={(el) => (sectionRefs.current[6] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Certifications
               </h2>
@@ -398,7 +408,7 @@ export default function Page() {
               </div>
             </Section>
 
-            <Section>
+            <Section ref={(el) => (sectionRefs.current[7] = el)}>
               <h2 className="text-2xl font-bold tracking-tight text-primary">
                 Holopin Badges
               </h2>
@@ -421,10 +431,10 @@ export default function Page() {
 
             <footer className="mt-24 text-center text-sm text-muted-foreground relative">
               <span>
-                    🌍 Your visits: {localVisits}
+                🌍 Your visits: {localVisits}
                 {visitorCount && (
                   <>
-                    <br/>
+                    <br />
                     {(() => {
                       let emoji = "👀";
                       if (rollingCount % 1000 === 0) emoji = "🎉";
@@ -438,7 +448,7 @@ export default function Page() {
                   </>
                 )}
               </span>
-              <br/>
+              <br />
               <span>
                 This site is open source{" "}
                 <a
@@ -448,7 +458,7 @@ export default function Page() {
                 >
                   Improve this page
                 </a>
-                
+
               </span>
 
               <AnimatePresence>
@@ -462,9 +472,23 @@ export default function Page() {
                     }
                     className="fixed bottom-6 right-6 p-3 rounded-full bg-primary text-background shadow-lg hover:scale-110 transition-transform"
                   >
-                    ↑
+                    <ChevronUp className="h-5 w-5" />
                   </motion.button>
                 )}
+              {
+                !showUp && (
+                  <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  onClick={handleScrollNext}
+                  className="fixed bottom-6 right-6 p-3 rounded-full bg-secondary text-primary shadow-md hover:scale-110 transition-transform"
+                  whileHover={{ y: 3 }}
+                  >
+                    <ChevronDown className="h-5 w-5" />
+                  </motion.button>
+                )
+              }
               </AnimatePresence>
             </footer>
           </motion.section>
