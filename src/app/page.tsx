@@ -10,7 +10,7 @@ import { HolopinCard } from "@/components/holopin-card";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import md5 from "md5";
-import HeroAnimation from "@/components/loader";
+// import HeroAnimation from "@/components/loader";
 import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
@@ -170,7 +170,7 @@ export default function Page() {
         />
       </Head>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {loading && (
           <motion.div
             key="loader"
@@ -182,7 +182,7 @@ export default function Page() {
             <HeroAnimation />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {!loading && (
         // <main className="container relative mx-auto scroll-my-12 p-4 print:p-12 md:p-16">
