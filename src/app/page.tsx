@@ -19,7 +19,6 @@ export default function Page() {
   )}?s=200`;
 
   const [visitorCount, setVisitorCount] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
   const [showUp, setShowUp] = useState(false);
   const [rollingCount, setRollingCount] = useState(0);
   const [hasRolled, setHasRolled] = useState(false);
@@ -55,8 +54,6 @@ export default function Page() {
     const updated = visits ? parseInt(visits) + 1 : 1;
     localStorage.setItem("visit-count", updated.toString());
     setLocalVisits(updated);
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -114,7 +111,6 @@ export default function Page() {
       console.log("%c🌐 Portfolio: https://nuhmanpk.github.io/portfolio", styleLink);
       console.log("%c🐙 GitHub: https://github.com/nuhmanpk", styleLink);
       console.log("%c🔗 LinkedIn: https://www.linkedin.com/in/nuhmanpk/", styleLink);
-      console.log("%c🤓 Oh, look at you — the DevTools detective! Not everyone ends up here, you’re clearly built different.", styleSub);
       console.log("%c🔥 And hey, if you find any error (other than a Vercel one 😅), be kind — fix it or hit me up on LinkedIn. Great minds debug alike!", styleLink);
       console.log("%c💰 Oh, and if you happen to be someone with a *better offer*, stop reading console logs and DM me ASAP. 😎", styleTitle);
 
@@ -184,7 +180,7 @@ export default function Page() {
         )}
       </AnimatePresence> */}
 
-      {!loading && (
+      {(
         // <main className="container relative mx-auto scroll-my-12 p-4 print:p-12 md:p-16">
         <main className="container relative mx-auto scroll-my-12 p-4 pb-8 print:p-12 md:p-16 md:pb-8">
 
