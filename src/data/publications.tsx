@@ -9,6 +9,15 @@ export const publications = [
         },
     },
     {
+        title: "How Instagram and Meta Algorithms Track You and Predict What You Want to See",
+        techStack: ["Nov 7, 2025"],
+        description: "",
+        link: {
+            label: "medium.com",
+            href: "https://nuhmanpk.medium.com/how-instagram-and-meta-algorithms-track-you-and-predict-what-you-want-to-see-9721e44e1e98",
+        },
+    },
+    {
         title: "Supercharge Your Web Development: Real-Time HTML Rendering on All Devices",
         techStack: ["Sep 13, 2023"],
         description: "",
