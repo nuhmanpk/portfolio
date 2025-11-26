@@ -14,6 +14,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://nuhmanpk.github.io/portfolio",
   },
+  keywords: [
+    "nuhman",
+    "nuhman pk",
+    "pk nuhman",
+    "nuhman portfolio",
+    "nuhman pk portfolio",
+    "nuhman developer",
+    "nuhman software engineer",
+    "nuhman pk developer",
+    "nuhman full stack",
+    "nuhman pk software engineer",
+    "nuhman official website",
+    "nuhman personal website",
+    "nuhman tech",
+    "nuhman programmer",
+    "nuhman engineer"
+  ],
   openGraph: {
     title: "Nuhman PK | Software Engineer",
     description:
