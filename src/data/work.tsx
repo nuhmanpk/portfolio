@@ -7,6 +7,8 @@ export const work = [
         start: "August 2024",
         end: "Present",
         description: "",
+        featured: true,
+        aiSummary: "Leveled up to Senior! Now I break things at scale and people actually listen when I say 'that might cause issues'. 🚀",
     },
     {
         company: "Bititude",
@@ -16,6 +18,8 @@ export const work = [
         start: "April 2022",
         end: "July 2024",
         description: "",
+        featured: true,
+        aiSummary: "Full Stack means full responsibility. Frontend? Backend? Database? Yes, all of it. All the time. ☕",
     },
     {
         company: "Open Source Developer",
@@ -26,5 +30,7 @@ export const work = [
         end: "Present",
         description:
             "My journey thrives on GitHub contributions and transformative projects, like cutting-edge Telegram bots revolutionizing communication and widely acclaimed PyPI packages simplifying complex tasks for over 80,000 developers. Fostering a vibrant open source community where ideas spark and collaborations flourish, I push boundaries in this fast-paced landscape, contributing to the collective knowledge and leaving a lasting legacy of impact.",
+        featured: true,
+        aiSummary: "Contributing code to the void since 2019. Sometimes the void contributes back. It's beautiful. 💚",
     },
 ];
