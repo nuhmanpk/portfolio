@@ -58,8 +58,6 @@ export const holopins = [
     {
         title: "Holopin x Hacktoberfest: 5 Badge Club",
         description: "This badge is awarded to people who earned at least 5 Hacktoberfest badges since 2022.",
-        featured: true,
-        aiSummary: "5 badges deep. They say it's not about quantity, but it kinda is. 🎯",
         link: "https://www.holopin.io/userbadge/cmha0535r002sjo04b03s2unr",
     },
 ];
