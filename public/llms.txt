@@ -1,0 +1,57 @@
+# Nuhman PK | Senior Software Engineer – Full Stack & ML, apparently at 24 | Building scalable solutions
+
+I’m Nuhman, a passionate software engineer and open-source developer specializing in Python, full-stack development, and AI/ML technologies. I thrive on building scalable, production-ready solutions, contributing to the developer community, and exploring emerging technologies. I enjoy creating tools, libraries, and frameworks that empower developers and streamline workflows.
+
+## Personal Information
+- [Malappuram, Kerala](https://www.google.com/maps/place/Malappuram): Location information about Nuhman.
+
+## Professional Profiles
+- [LinkedIn](https://www.linkedin.com/in/nuhmanpk/): Connect with Nuhman on LinkedIn for professional networking.
+- [X](https://x.com/pk__nuhman): Follow Nuhman on X for updates and insights.
+- [Instagram](https://instagram.com/nuhman_pk): Check out Nuhman's Instagram for personal and professional highlights.
+- [Kaggle](https://kaggle.com/nuhmanpk): Explore Nuhman's contributions and projects on Kaggle.
+- [Medium](https://medium.com/@nuhmanpk): Read Nuhman's articles and insights on Medium.
+- [Stack Overflow](https://stackoverflow.com/users/16388290/nuhman-pk): Engage with Nuhman on Stack Overflow for technical discussions.
+- [Bititude](https://bititude.com/): Discover Nuhman's work and projects on Bititude.
+
+
+## Projects and Tools
+### Development Tools
+- [Super Logger](https://marketplace.visualstudio.com/items?itemName=nuhmanpk.superlogger): A logging tool designed to enhance debugging and monitoring in applications.
+- [Webtrench](https://pypi.org/project/Webtrench/): A web development tool aimed at improving workflow and efficiency.
+
+### Python Libraries and APIs
+- [YoutubeTags](https://pypi.org/project/YoutubeTags/): A Python API wrapper for easily extracting YouTube tags.
+- [cv2filters](https://medium.com/@nuhmanpk/a-comprehensive-guide-to-cv2filters-a-powerful-opencv-wrapper-for-image-preprocessing-80c25c897f53): A powerful OpenCV wrapper for image preprocessing tasks.
+- [Pyrogram](https://nuhmanpk.github.io/portfolio/nuhmanpk.medium.com/building-your-first-telegram-bot-with-pyrogram-a-step-by-step-guide-76fb1bf906aa): A step-by-step guide to building your first Telegram bot using Pyrogram.
+- [PyroSnippets](https://marketplace.visualstudio.com/items?itemName=nuhmanpk.pyrosnippets): A collection of useful snippets for Python development.
+- [PyplateX](https://github.com/nuhmanpk/PyPlateX): A tool for enhancing Python applications with additional features.
+- [SnapNutriBot](https://github.com/nuhmanpk/SnapNutriBotV2): A Telegram bot designed for nutritional tracking and advice.
+- [Quick Llama](https://pypi.org/project/quick-llama/): A tool for running Ollama models seamlessly in Google Colab.
+
+### Machine Learning and AI
+- [LangSmith](https://academy.langchain.com/certificates/cjpjsbukdl): A platform for developing language models and applications.
+- [LangGraph](https://academy.langchain.com/certificates/1l7agmymtf): A tool for building ambient agents using language models.
+- [LangChain](https://www.udemy.com/certificate/UC-27ec2619-1f5e-4d21-9895-69a5dfaa9955/): A framework for developing LLM-powered applications.
+- [Pytorch for Deep Learning](https://www.udemy.com/certificate/UC-db3422ce-789f-4ee3-b95d-e0c17cc8a6a5/): Resources and tutorials for using PyTorch in deep learning projects.
+- [Machine Learning](https://www.kaggle.com/learn/certification/nuhmanpk/intro-to-machine-learning): Comprehensive resources and guides on machine learning concepts.
+- [ML Ops](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/17138684): Best practices and tools for managing machine learning operations.
+
+### Advanced Topics
+- [Advanced SQL](https://www.kaggle.com/learn/certification/nuhmanpk/advanced-sql): In-depth resources for mastering SQL.
+- [Build CNN with TensorFlow and Keras](https://www.kaggle.com/learn/certification/nuhmanpk/computer-vision): A guide to building Convolutional Neural Networks using TensorFlow and Keras.
+- [Transformer Models and BERT Model](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6651890): Insights into transformer models and their applications.
+- [Introduction to Image Generation](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6643394): An overview of techniques for generating images using AI.
+- [Attention Mechanism](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6643540): Understanding the attention mechanism in neural networks.
+- [Image Captioning Models](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/10376858): Exploring models that generate captions for images.
+- [Fundamentals of MCP](https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/nuhmanpk/2025-06-09.png): Basic concepts and principles of Model Control Protocol.
+- [Data Structures and Algorithms](https://www.udemy.com/certificate/UC-63a51b98-1624-470d-92e3-a8d4b6aebf1d/): Essential knowledge for software development and problem-solving.
+
+## Additional Resources
+- [Telegram Bots | telegram-bots](https://nuhmanpk.github.io/telegram-bots/): A collection of resources and guides for building Telegram bots.
+- [Supercharge Your Web Development: Real-Time HTML Rendering on All Devices](https://nuhmanpk.medium.com/supercharge-your-web-development-real-time-html-rendering-on-all-devices-with-vs-code-live-server-56921c1d100): Techniques for enhancing web development with real-time rendering capabilities.
+- [Extracting YouTube Tags Made Easy: Introducing YoutubeTags Python API Wrapper](https://medium.com/@nuhmanpk/extracting-youtube-tags-made-easy-introducing-youtubetags-python-api-wrapper-c3bd3416d5fc): A detailed introduction to the YoutubeTags API wrapper for Python.
+
+This structured summary provides a comprehensive overview of Nuhman's professional background, projects, and resources in the field of software engineering and machine learning. Refer https://nuhmanpk.github.io/portfolio for update to date data. 
+
+

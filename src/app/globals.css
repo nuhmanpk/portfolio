@@ -1,0 +1,348 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    cursor: none !important;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor: none !important;
+  }
+
+  /* Force hide cursor on interactive elements that might override it */
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    cursor: none !important;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.print-force-new-page {
+  page-break-before: always;
+}
+
+/* ========================================
+   Background Grid Pattern
+   ======================================== */
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.dark .bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* ========================================
+   Floating Gradient Orbs
+   ======================================== */
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.dark .gradient-orb {
+  opacity: 0.15;
+}
+
+/* Orb 1 - Purple/Pink - Top Right */
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  top: -50px;
+  right: -50px;
+  opacity: 0.15;
+}
+
+
+/* Orb 2 - Blue/Cyan - Bottom Left */
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  bottom: 20%;
+  left: -50px;
+  opacity: 0.15;
+}
+
+
+/* Orb 3 - Emerald/Teal - Middle Right */
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #ec4899 0%, #ef4444 100%);
+  top: 40%;
+  right: 10%;
+  opacity: 0.15;
+}
+
+
+/* Orb 4 - Amber/Orange - Bottom */
+.orb-4 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  bottom: -50px;
+  left: 30%;
+  opacity: 0.15;
+}
+
+
+
+
+/* ========================================
+   AI Summary & Aura Effects Animations
+   ======================================== */
+
+/* Typing cursor blink animation */
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* Aura glow pulse effect */
+@keyframes aura-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3),
+      0 0 40px rgba(139, 92, 246, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5),
+      0 0 60px rgba(139, 92, 246, 0.2);
+  }
+}
+
+.animate-aura-pulse {
+  animation: aura-pulse 2s ease-in-out infinite;
+}
+
+/* Gradient border rotation animation */
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-rotate {
+  animation: gradient-rotate 3s ease infinite;
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: bounce 2s infinite;
+}
+
+/* 3-second delayed appearance */
+@keyframes delayed-fade-in {
+
+  0%,
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-delay-appear {
+  animation: delayed-fade-in 3s ease-out forwards;
+  opacity: 0;
+  /* Start hidden */
+}
+
+/* Float animation for decorative elements */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Featured badge glowing effect */
+@keyframes featured-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(234, 179, 8, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.8),
+      0 0 25px rgba(234, 179, 8, 0.4);
+  }
+}
+
+.animate-featured-glow {
+  animation: featured-glow 2s ease-in-out infinite;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  @apply bg-white/10 dark:bg-black/10 backdrop-blur-xl;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  @apply bg-white/20 dark:bg-black/20 backdrop-blur-2xl;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth scrollbar for modals */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/40;
+}
