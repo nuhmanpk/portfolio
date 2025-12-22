@@ -14,6 +14,8 @@ export const publications = [
         title: "How Instagram and Meta Algorithms Track You and Predict What You Want to See",
         techStack: ["Nov 7, 2025"],
         description: "",
+        featured: true,
+        aiSummary: "Exposing how Instagram knows you better than you know yourself. Spoiler: it's terrifyingly accurate. 👁️‍🗨️",
         link: {
             label: "medium.com",
             href: "https://nuhmanpk.medium.com/how-instagram-and-meta-algorithms-track-you-and-predict-what-you-want-to-see-9721e44e1e98",

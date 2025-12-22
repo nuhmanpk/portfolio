@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nuhman PK | Software Engineer",
     description:
-      "Explore Nuhman PK’s projects, achievements, and technical skills in web and software engineering.",
+      "Explore Nuhman PK's projects, achievements, and technical skills in web and software engineering.",
     url: "https://nuhmanpk.github.io/portfolio",
     siteName: "Nuhman PK Portfolio",
     images: [
@@ -75,7 +75,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.className}>
-      <body>
+      <body className="relative min-h-screen overflow-x-hidden cursor-none md:cursor-none">
+        {/* Background Effects */}
+        <div className="fixed inset-0 -z-10">
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 bg-grid opacity-20" />
+
+          {/* Floating Gradient Orbs */}
+          <div className="gradient-orb orb-1" />
+          <div className="gradient-orb orb-2" />
+          <div className="gradient-orb orb-3" />
+          <div className="gradient-orb orb-4" />
+
+          {/* Subtle overlay to soften the effect */}
+          <div className="absolute inset-0 bg-background/60" />
+        </div>
+
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
