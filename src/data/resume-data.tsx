@@ -13,10 +13,11 @@ export const RESUME_DATA = {
   initials: "Pk",
   location: "Malappuram, Kerala",
   locationLink: "https://www.google.com/maps/place/Malappuram",
-  about: `Senior Software Engineer – Full Stack & ML, apparently at ${getDynamicAge()} | Building scalable solutions`,
-  summary: `I'm Nuhman, a passionate open-source developer who loves building with Python and exploring the world of AI and machine learning. I also enjoy crafting web applications with JavaScript, React, and Next.js, yes, I chose this life willingly. Most of my time goes into creating useful tools, contributing to open source, and helping other developers build faster and smarter.
-I thrive in fast-paced environments, love solving complex problems, and never stop learning new technologies. Outside of coding, you’ll probably find me experimenting with new AI models, tweaking side projects, or looking for the next big thing to build ideally with a free version of GPT by my side. I’m genuinely afraid of CSS. 
-When I’m not deep in code, I’m usually sharing ideas with the developer community, automating something that probably didn’t need automating, or exploring how open-source can make tech more accessible. My goal is simple, keep learning, keep building, and leave the internet a little cooler than I found it.`,
+  about: `Senior Software Engineer (Full Stack & AI/ML) | ${getDynamicAge()} | Building open-source tools and scalable systems used in production`,
+  summary: `I’m Nuhman, a Senior Software Engineer and open-source builder focused on creating practical, scalable software. My work spans full-stack web development, automation, and AI/ML systems, with a strong emphasis on tools that solve real problems and are actually used by people.
+I’ve built and maintained open-source projects with tens of thousands of users, designed APIs and automation pipelines in production environments, and worked extensively with Python, JavaScript, React, Next.js, and modern AI tooling. I enjoy turning complex problems into simple, reliable systems and shipping fast without sacrificing quality.
+I thrive in fast-moving environments, take ownership of end-to-end systems, and consistently push ideas from prototype to production. Outside of work, I experiment with LLMs, agents, and developer tooling, contribute to open source, and share learnings with the developer community.
+My focus is building software that scales, tools that empower developers, and systems that make technology more accessible and efficient.`,
   personalWebsiteUrl: "https://nuhmanpk.github.io/portfolio",
   contact: {
     email: "nuhmanpk7@gmail.com",
