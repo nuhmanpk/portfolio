@@ -83,22 +83,22 @@ export default function Page() {
 
   // Get all unique tech stacks for filter
   const allTechStacks = Array.from(
-    new Set(RESUME_DATA.projects.flatMap((p: { techStack: readonly string[] }) => p.techStack))
+    new Set(RESUME_DATA.projects.flatMap((p: { techStack: readonly string[]; }) => p.techStack))
   ).slice(0, 10); // Limit to top 10
 
   // Filter data based on featured flag and tech filter
-  const featuredProjects = RESUME_DATA.projects.filter((p: { featured?: boolean }) => p.featured);
+  const featuredProjects = RESUME_DATA.projects.filter((p: { featured?: boolean; }) => p.featured);
   const filteredProjects = activeTechFilter
-    ? RESUME_DATA.projects.filter((p: { techStack: readonly string[] }) =>
+    ? RESUME_DATA.projects.filter((p: { techStack: readonly string[]; }) =>
       p.techStack.includes(activeTechFilter)
     )
     : showAllProjects
       ? RESUME_DATA.projects
       : featuredProjects;
 
-  const featuredPublications = RESUME_DATA.publications.filter((p: { featured?: boolean }) => p.featured);
-  const featuredCerts = RESUME_DATA.certifications.filter((c: { featured?: boolean }) => c.featured);
-  const featuredHolopins = RESUME_DATA.holopins.filter((h: { featured?: boolean }) => h.featured);
+  const featuredPublications = RESUME_DATA.publications.filter((p: { featured?: boolean; }) => p.featured);
+  const featuredCerts = RESUME_DATA.certifications.filter((c: { featured?: boolean; }) => c.featured);
+  const featuredHolopins = RESUME_DATA.holopins.filter((h: { featured?: boolean; }) => h.featured);
 
   const displayedPublications = showAllPublications ? RESUME_DATA.publications : featuredPublications;
   const displayedCerts = showAllCerts ? RESUME_DATA.certifications : featuredCerts;
@@ -124,7 +124,7 @@ export default function Page() {
     }
   ];
 
-  const workSummary = RESUME_DATA.work.map((w: { company: string; title: string; aiSummary?: string }) => ({
+  const workSummary = RESUME_DATA.work.map((w: { company: string; title: string; aiSummary?: string; }) => ({
     title: `${w.company} - ${w.title}`,
     aiSummary: w.aiSummary
   }));
@@ -162,22 +162,22 @@ export default function Page() {
       case "skills":
         return skillsSummary;
       case "projects":
-        return RESUME_DATA.projects.map((p: { title: string; aiSummary?: string }) => ({
+        return RESUME_DATA.projects.map((p: { title: string; aiSummary?: string; }) => ({
           title: p.title,
           aiSummary: p.aiSummary
         }));
       case "publications":
-        return RESUME_DATA.publications.map((p: { title: string; aiSummary?: string }) => ({
+        return RESUME_DATA.publications.map((p: { title: string; aiSummary?: string; }) => ({
           title: p.title,
           aiSummary: p.aiSummary
         }));
       case "certifications":
-        return RESUME_DATA.certifications.map((c: { title: string; aiSummary?: string }) => ({
+        return RESUME_DATA.certifications.map((c: { title: string; aiSummary?: string; }) => ({
           title: c.title,
           aiSummary: c.aiSummary
         }));
       case "holopins":
-        return RESUME_DATA.holopins.map((h: { title: string; aiSummary?: string }) => ({
+        return RESUME_DATA.holopins.map((h: { title: string; aiSummary?: string; }) => ({
           title: h.title,
           aiSummary: h.aiSummary
         }));
@@ -211,8 +211,11 @@ export default function Page() {
     )
       .then((res) => res.text())
       .then((data) => {
-        const match = data.match(/<title>VISITORS: (\d+)<\/title>/);
-        if (match && match[1]) setVisitorCount(match[1]);
+        const match = data.match(/<title>VISITORS: ([\d.,]+)<\/title>/);
+        if (match && match[1]) {
+          const clean = match[1].replace(/[.,]/g, "");
+          setVisitorCount(clean);
+        }
       })
       .catch(() => setVisitorCount(null));
 
