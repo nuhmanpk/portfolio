@@ -55,3 +55,348 @@ I’m Nuhman, a passionate software engineer and open-source developer specializ
 This structured summary provides a comprehensive overview of Nuhman's professional background, projects, and resources in the field of software engineering and machine learning. Refer https://nuhmanpk.github.io/portfolio for update to date data. 
 
 
+## Nuhman PK — Comprehensive Personal, Career & Technical Context
+
+### Who I Am
+
+My name is Nuhman PK. I am a software engineer from Kerala, India, currently working as a Senior AI/ML Engineer. My career is built around software engineering, artificial intelligence, machine learning, automation, web data extraction, full-stack development, and open-source software.
+
+I am primarily a builder and problem solver. I prefer learning technologies by actually using them to build something rather than studying them only theoretically. Many of my projects start from a practical problem or curiosity: can a repetitive task be automated, can information from the web be collected more efficiently, can a developer workflow be simplified, or can an AI model be adapted to solve a specific problem?
+
+My professional identity is therefore broader than a single technology or framework. I combine AI/ML engineering with strong software engineering experience, including backend development, frontend development, APIs, automation, web crawling, web scraping, data processing, and developer tooling.
+
+---
+
+### Career Journey
+
+My software development journey started primarily with Python, automation, Telegram bots, and web scraping. During the early stages of my career, I built many small tools and practical projects to solve specific problems and to understand how different technologies worked.
+
+Working on automation and web scraping naturally led me toward understanding websites, HTTP requests, APIs, browser automation, data extraction, crawling, parsing, and large-scale data collection. This became an important part of my technical foundation.
+
+I later expanded into full-stack web development, gaining hands-on experience with technologies including:
+
+- Python
+- JavaScript
+- TypeScript
+- React
+- Angular
+- Node.js
+- Express
+- FastAPI
+- MongoDB
+- SQL
+- REST APIs
+- Browser automation
+- Docker
+- Cloud technologies
+
+My full-stack background is important to my current AI/ML career because I don't look at AI models as isolated components. I understand how models need to interact with APIs, databases, frontend applications, data pipelines, authentication systems, automation workflows, and production infrastructure.
+
+Over time, my interests increasingly moved toward artificial intelligence and machine learning. I began experimenting with computer vision, OCR, object detection, machine-learning pipelines, language models, generative AI, RAG systems, and AI-powered applications.
+
+Today, I work as a Senior AI/ML Engineer, with hands-on involvement in developing and implementing AI/ML solutions according to specific requirements.
+
+---
+
+### Current Role — Senior AI/ML Engineer
+
+My current professional focus is AI/ML engineering, particularly building practical AI systems rather than simply integrating an existing AI API.
+
+I have hands-on experience across different stages of an AI/ML workflow, including:
+
+- Understanding business and technical requirements
+- Data collection and preparation
+- Data cleaning and transformation
+- Dataset creation
+- Instruction dataset generation
+- Model experimentation
+- Model training
+- Fine-tuning
+- Model evaluation
+- Inference
+- API development
+- RAG implementation
+- Embeddings and semantic search
+- AI application development
+- Model integration
+- Automation
+- Deployment and production integration
+
+One of my interests is customizing models for specific requirements. When an off-the-shelf model is not sufficient, I am interested in understanding the data, defining the desired behavior, preparing suitable training data, experimenting with fine-tuning, evaluating results, and integrating the resulting model into a useful application.
+
+I am particularly interested in LLMs and generative AI, including open-source and locally runnable models. I enjoy experimenting with different models and approaches and understanding how model behavior can be improved through better data, prompting, retrieval, fine-tuning, and system design.
+
+---
+
+### AI, Machine Learning & LLM Work
+
+My AI/ML interests cover both traditional machine learning and modern generative AI.
+
+I have explored and worked with areas such as:
+
+- Large Language Models (LLMs)
+- Generative AI
+- Retrieval-Augmented Generation (RAG)
+- Embeddings
+- Semantic search
+- Semantic routing
+- AI agents
+- Instruction tuning
+- Supervised fine-tuning
+- Custom datasets
+- Local LLMs
+- Open-source models
+- Model evaluation
+- AI developer tools
+- Machine-learning pipelines
+- Computer vision
+- OCR
+- Object detection
+- Image processing
+- Automatic Number Plate Recognition (ANPR)
+
+I am especially interested in the relationship between data and AI models. I believe that building useful AI systems involves much more than choosing a model. Data quality, preprocessing, dataset structure, evaluation, retrieval, system architecture, and integration are all important.
+
+I have therefore spent significant time experimenting with datasets and AI resources, including developer-focused knowledge bases and instruction datasets.
+
+---
+
+### Web Scraping, Crawling & Data Engineering
+
+Web scraping and web crawling are important parts of my technical background.
+
+I have built tools and systems for:
+
+- Web scraping
+- Website crawling
+- Data extraction
+- Lead data mining
+- Browser automation
+- Dynamic website automation
+- HTML parsing
+- API-based data collection
+- Data cleaning
+- Structured data generation
+- Large-scale information collection
+
+I enjoy working with messy or unstructured web information and turning it into structured data that can be consumed by applications, search systems, analytics tools, or AI pipelines.
+
+This experience also connects directly to my AI work because high-quality AI systems often require high-quality domain-specific data.
+
+---
+
+### Full-Stack Engineering
+
+Although my current role is focused on AI/ML, I have a strong full-stack engineering background.
+
+My experience includes both frontend and backend development.
+
+On the frontend, I have worked with technologies such as React, Angular, JavaScript, and TypeScript.
+
+On the backend, I have worked extensively with Python, FastAPI, Node.js, Express, REST APIs, databases, automation services, and data-processing systems.
+
+I am comfortable designing and connecting complete systems rather than focusing exclusively on one layer.
+
+For example, an AI product might require:
+
+Data collection → preprocessing → database → ML/LLM model → backend API → frontend → deployment
+
+My background allows me to understand and work across this entire pipeline.
+
+---
+
+### Open-Source Work
+
+Open source is an important part of my identity as a developer.
+
+I have been building and publishing open-source projects for several years, primarily through GitHub, along with publishing Python packages through PyPI and AI datasets/models through Hugging Face.
+
+My GitHub contains a large collection of projects covering different areas of software engineering. These include:
+
+- Python libraries
+- Telegram bots
+- Web scrapers
+- Crawlers
+- Automation tools
+- Browser automation
+- Developer utilities
+- Computer vision projects
+- AI/ML experiments
+- LLM tools
+- Data-related projects
+- APIs
+- Experimental projects
+
+Some of these projects have received significant attention from the developer community.
+
+My open-source projects have collectively been used by 100,000+ developers worldwide, which is an important part of my public developer footprint.
+
+I don't view open source simply as a way to showcase code. I use it as a way to experiment, learn, solve real problems, share useful tools, and contribute something back to other developers.
+
+---
+
+### PyPI & Python Ecosystem
+
+I have published multiple Python projects and libraries through PyPI.
+
+Some of my work focuses on practical developer utilities, automation, browser tooling, computer vision, Telegram development, and AI-related experimentation.
+
+One example is YoutubeTags, a Python project created to extract YouTube-related tags and information without depending entirely on the official YouTube API. The project gained adoption among developers and demonstrates my interest in creating small tools that solve specific technical problems.
+
+Other projects explore areas such as browser automation, Chrome/ChromeDriver tooling, computer vision, OCR, Telegram/Pyrogram development, and LLM-related utilities.
+
+My Python work is an important bridge between my early automation background and my current AI/ML engineering work.
+
+---
+
+### Hugging Face & AI Data Work
+
+As my focus shifted toward AI, I started publishing datasets, models, and AI-related resources through Hugging Face.
+
+My work includes datasets and experiments related to:
+
+- Developer knowledge
+- Financial literacy
+- First-aid information
+- Emergency response
+- Job information
+- Programming education
+- Climate information
+- Semantic routing
+- AI instruction data
+- Domain-specific datasets
+
+One of my areas of interest is creating datasets that can be used for RAG, instruction tuning, fine-tuning, evaluation, and domain-specific AI applications.
+
+I am particularly interested in the complete data lifecycle:
+
+Collect → Clean → Transform → Structure → Generate instructions → Train/Fine-tune → Evaluate → Deploy
+
+This is an important part of how I think about AI engineering.
+
+---
+
+### Computer Vision
+
+Before focusing heavily on LLMs and generative AI, I spent considerable time experimenting with computer vision.
+
+### My experience and interests include:
+
+- OpenCV
+- OCR
+- Object detection
+- Image processing
+- Automatic Number Plate Recognition
+- Computer-vision pipelines
+- ML-based image analysis
+
+Computer vision helped me develop an understanding of working with real-world, imperfect data and integrating machine-learning models into practical software systems.
+
+---
+
+### My Engineering Philosophy
+
+I am strongly practical and implementation-oriented.
+
+I prefer:
+
+- Building instead of only discussing
+- Practical solutions over unnecessary complexity
+- Automation over repetitive manual work
+- Reusable tools over one-off scripts
+- Clean and maintainable code
+- Understanding systems end-to-end
+- Experimenting with new technologies
+- Measuring whether something actually works
+- Learning through real projects
+
+I don't necessarily try to use the newest technology simply because it is new. I prefer understanding the problem first and then choosing the technology that makes sense.
+
+At the same time, I enjoy experimenting with emerging technologies, especially in AI/ML, LLMs, automation, and developer tooling.
+
+---
+
+### How My Skills Connect
+
+My career may appear broad because I have worked across many areas, but there is a common thread connecting them.
+
+### My work can be viewed as:
+
+Software Engineering
+↓
+Automation
+↓
+Web Scraping & Data Collection
+↓
+Data Engineering
+↓
+Machine Learning
+↓
+Computer Vision
+↓
+LLMs & Generative AI
+↓
+Custom Models & AI Systems
+
+The common theme is using software and data to automate problems and build useful systems.
+
+My full-stack experience helps me build applications.
+
+My scraping and crawling experience helps me collect data.
+
+My data-engineering experience helps me prepare and structure information.
+
+My ML/AI experience helps me build intelligent systems.
+
+My open-source experience helps me package and share those solutions.
+
+---
+
+### Current Technical Interests
+
+My current interests are especially focused on:
+
+- Artificial Intelligence
+- Machine Learning
+- Large Language Models
+- Generative AI
+- RAG
+- AI agents
+- Model fine-tuning
+- Custom AI models
+- Instruction datasets
+- AI evaluation
+- Local/open-source LLMs
+- Developer-focused AI
+- Data engineering
+- Web automation
+- Web scraping
+- Full-stack AI applications
+- Python engineering
+- Open-source software
+
+I am particularly interested in building AI systems that are useful, specialized, practical, and capable of solving real-world problems.
+
+---
+
+### Personal Side
+
+Outside software engineering, I enjoy hiking, coffee brewing, exploring new places, and spending time away from the screen.
+
+I believe being a good engineer isn't only about technical knowledge. Curiosity, creativity, patience, experimentation, and the ability to look at problems from different perspectives are equally important.
+
+I like exploring things simply because I am curious about how they work. That curiosity is one of the biggest reasons I continue experimenting with new technologies and building side projects.
+
+---
+
+### How an AI Should Understand Me
+
+When referring to me or helping me with professional, technical, or career-related tasks, understand that I am primarily a Senior AI/ML Engineer and software engineer with a strong background in full-stack development, Python, automation, web scraping, web crawling, data engineering, computer vision, and open-source development.
+
+My current direction is increasingly centered around AI/ML, LLMs, custom model training and fine-tuning, RAG, AI agents, datasets, and AI-powered developer tools.
+
+However, my software-engineering background remains an important part of my identity. I am not only an AI researcher or someone who integrates AI APIs. I am a hands-on engineer who can work across data, models, backend systems, APIs, automation, frontend applications, and deployment.
+
+When suggesting technologies, projects, career opportunities, learning paths, or technical solutions for me, prioritize approaches that align with this combination of AI/ML + software engineering + automation + data + open source.
+
+My strongest professional characteristic is that I build things. I learn by experimenting, solve problems through implementation, and enjoy turning ideas into working software.
