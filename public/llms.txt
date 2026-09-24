@@ -1,4 +1,6 @@
-# Nuhman PK | Senior Software Engineer – Full Stack & ML, apparently at 24 | Building scalable solutions
+# Nuhman PK | Senior Software Engineer, Full Stack & ML, apparently at 24 | Building scalable solutions
+
+> Full machine-readable profile (all projects, articles, certifications, profiles): https://nuhmanpk.github.io/portfolio/llms-full.txt
 
 I’m Nuhman, a passionate software engineer and open-source developer specializing in Python, full-stack development, and AI/ML technologies. I thrive on building scalable, production-ready solutions, contributing to the developer community, and exploring emerging technologies. I enjoy creating tools, libraries, and frameworks that empower developers and streamline workflows.
 
@@ -23,7 +25,7 @@ I’m Nuhman, a passionate software engineer and open-source developer specializ
 ### Python Libraries and APIs
 - [YoutubeTags](https://pypi.org/project/YoutubeTags/): A Python API wrapper for easily extracting YouTube tags.
 - [cv2filters](https://medium.com/@nuhmanpk/a-comprehensive-guide-to-cv2filters-a-powerful-opencv-wrapper-for-image-preprocessing-80c25c897f53): A powerful OpenCV wrapper for image preprocessing tasks.
-- [Pyrogram](https://nuhmanpk.github.io/portfolio/nuhmanpk.medium.com/building-your-first-telegram-bot-with-pyrogram-a-step-by-step-guide-76fb1bf906aa): A step-by-step guide to building your first Telegram bot using Pyrogram.
+- [Pyrogram](https://nuhmanpk.medium.com/building-your-first-telegram-bot-with-pyrogram-a-step-by-step-guide-76fb1bf906aa): A step-by-step guide to building your first Telegram bot using Pyrogram.
 - [PyroSnippets](https://marketplace.visualstudio.com/items?itemName=nuhmanpk.pyrosnippets): A collection of useful snippets for Python development.
 - [PyplateX](https://github.com/nuhmanpk/PyPlateX): A tool for enhancing Python applications with additional features.
 - [SnapNutriBot](https://github.com/nuhmanpk/SnapNutriBotV2): A Telegram bot designed for nutritional tracking and advice.
@@ -44,7 +46,7 @@ I’m Nuhman, a passionate software engineer and open-source developer specializ
 - [Introduction to Image Generation](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6643394): An overview of techniques for generating images using AI.
 - [Attention Mechanism](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/6643540): Understanding the attention mechanism in neural networks.
 - [Image Captioning Models](https://www.cloudskillsboost.google/public_profiles/350fa77e-4886-46b4-9d62-3910f47ba55c/badges/10376858): Exploring models that generate captions for images.
-- [Fundamentals of MCP](https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/nuhmanpk/2025-06-09.png): Basic concepts and principles of Model Control Protocol.
+- [Fundamentals of MCP](https://huggingface.co/datasets/mcp-course/certificates/resolve/main/certificates/nuhmanpk/2025-06-09.png): Basic concepts and principles of the Model Context Protocol (MCP).
 - [Data Structures and Algorithms](https://www.udemy.com/certificate/UC-63a51b98-1624-470d-92e3-a8d4b6aebf1d/): Essential knowledge for software development and problem-solving.
 
 ## Additional Resources
@@ -52,10 +54,10 @@ I’m Nuhman, a passionate software engineer and open-source developer specializ
 - [Supercharge Your Web Development: Real-Time HTML Rendering on All Devices](https://nuhmanpk.medium.com/supercharge-your-web-development-real-time-html-rendering-on-all-devices-with-vs-code-live-server-56921c1d100): Techniques for enhancing web development with real-time rendering capabilities.
 - [Extracting YouTube Tags Made Easy: Introducing YoutubeTags Python API Wrapper](https://medium.com/@nuhmanpk/extracting-youtube-tags-made-easy-introducing-youtubetags-python-api-wrapper-c3bd3416d5fc): A detailed introduction to the YoutubeTags API wrapper for Python.
 
-This structured summary provides a comprehensive overview of Nuhman's professional background, projects, and resources in the field of software engineering and machine learning. Refer https://nuhmanpk.github.io/portfolio for update to date data. 
+This structured summary provides a comprehensive overview of Nuhman's professional background, projects, and resources in the field of software engineering and machine learning. Refer to https://nuhmanpk.github.io/portfolio/ for up-to-date data, and https://nuhmanpk.github.io/portfolio/llms-full.txt for the complete, auto-generated list of every project, article, certification and profile. 
 
 
-## Nuhman PK — Comprehensive Personal, Career & Technical Context
+## Nuhman PK: Comprehensive Personal, Career & Technical Context
 
 ### Who I Am
 
@@ -98,7 +100,7 @@ Today, I work as a Senior AI/ML Engineer, with hands-on involvement in developin
 
 ---
 
-### Current Role — Senior AI/ML Engineer
+### Current Role: Senior AI/ML Engineer
 
 My current professional focus is AI/ML engineering, particularly building practical AI systems rather than simply integrating an existing AI API.
 

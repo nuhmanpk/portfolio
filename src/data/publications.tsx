@@ -62,7 +62,7 @@ export const publications = [
         aiSummary: "From zero to bot in one article. Your Telegram will never be the same. 🤖",
         link: {
             label: "medium.com",
-            href: "nuhmanpk.medium.com/building-your-first-telegram-bot-with-pyrogram-a-step-by-step-guide-76fb1bf906aa",
+            href: "https://nuhmanpk.medium.com/building-your-first-telegram-bot-with-pyrogram-a-step-by-step-guide-76fb1bf906aa",
         },
     }
 ];

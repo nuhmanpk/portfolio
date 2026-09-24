@@ -1,4 +1,4 @@
-# 🚀 Nuhman PK — Portfolio
+# 🚀 Nuhman PK | Portfolio
 
 [![Visits](https://api.visitorbadge.io/api/visitors?path=[https://github.com/nuhmanpk/portfolio](https://github.com/nuhmanpk/portfolio)&countColor=%23007EC6&label=Visits&style=flat-square&token=YOUR_API_TOKEN)](https://github.com/nuhmanpk/portfolio)
 [![GitHub last commit](https://img.shields.io/github/last-commit/nuhmanpk/portfolio?style=flat-square&color=brightgreen)](https://github.com/nuhmanpk/portfolio/commits/main)
@@ -12,8 +12,7 @@
 
 ### 🧠 About
 
-This is my personal portfolio built with **Next.js**, **TailwindCSS**, and **Framer Motion** — designed to showcase my projects, experience, and open-source contributions.  
-Inspired by [BartoszJarocki](https://cv.jarocki.me/).
+This is my personal portfolio built with **Next.js**, **TailwindCSS**, and **Framer Motion**, designed to showcase my projects, experience, and open-source contributions.
 
 🔗 **Live:** [nuhmanpk.github.io/portfolio](https://nuhmanpk.github.io/portfolio)
 
@@ -21,21 +20,22 @@ Inspired by [BartoszJarocki](https://cv.jarocki.me/).
 
 ### ⚙️ Tech Stack
 
-- **Next.js 14** — for lightning-fast static generation  
-- **Tailwind CSS** — for a responsive and minimal UI  
-- **Framer Motion** — for subtle animations and transitions  
-- **TypeScript** — for reliable, maintainable code  
-- **Vercel** — for seamless deployment  
+- **Next.js 14**: for lightning-fast static generation  
+- **Tailwind CSS**: for a responsive and minimal UI  
+- **Framer Motion**: for subtle animations and transitions  
+- **TypeScript**: for reliable, maintainable code  
+- **GitHub Pages**: static export, deployed by GitHub Actions  
 
 ---
 
 ### 🧩 Features
 
-- Dynamic visitor counter  
-- SEO-optimized meta tags  
+- **Orbit**, a built-in "AI" assistant (⌘K) that answers questions about me, running entirely in the browser  
+- Live status card showing what I'm probably doing right now (Kerala time)  
+- Visitor counter, with a thank-you toast for every 10th visitor  
 - Dark / Light mode theme switcher  
-- Animated intro loader  
-- Auto-updating structured data for better search indexing  
+- SEO: structured data (JSON-LD), Open Graph image, sitemap and robots.txt  
+- AI-search friendly: `llms.txt` plus an auto-generated `llms-full.txt`  
 
 ---
 
@@ -54,3 +54,5 @@ npm install
 # Run locally
 npm run dev
 ```
+
+Then open [http://localhost:3000/portfolio](http://localhost:3000/portfolio) (the site is served under the `/portfolio` basePath).

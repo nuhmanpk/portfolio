@@ -78,7 +78,7 @@ export const certifications = [
     },
     {
         title: "Build CNN with TensorFlow and Keras",
-        techStack: ["Kaggle", "Spe 2023"],
+        techStack: ["Kaggle", "Sep 2023"],
         description: "",
         featured: false,
         aiSummary: "Teaching computers to see. Now they judge everything, just like my mother. 👁️",

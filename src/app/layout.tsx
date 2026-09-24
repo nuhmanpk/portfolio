@@ -1,71 +1,98 @@
-import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Space_Grotesk, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { RESUME_DATA } from "@/data/resume-data";
+import { DESCRIPTION, KEYWORDS, OG_IMAGE, SITE_NAME, SITE_URL, TITLE, jsonLd, url } from "@/lib/seo";
 
 import "./globals.css";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Nuhman PK | Software Engineer & Portfolio",
-  description:
-    "Portfolio of Nuhman PK showcasing projects, skills, and experience in software development and AI.",
-  metadataBase: new URL("https://nuhmanpk.github.io/portfolio"),
-  alternates: {
-    canonical: "https://nuhmanpk.github.io/portfolio",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  keywords: [
-    "nuhman",
-    "nuhman pk",
-    "pk nuhman",
-    "nuhman portfolio",
-    "nuhman pk portfolio",
-    "nuhman developer",
-    "nuhman software engineer",
-    "nuhman pk developer",
-    "nuhman full stack",
-    "nuhman pk software engineer",
-    "nuhman official website",
-    "nuhman personal website",
-    "nuhman tech",
-    "nuhman programmer",
-    "nuhman engineer"
-  ],
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: RESUME_DATA.name, url: SITE_URL }],
+  creator: RESUME_DATA.name,
+  publisher: RESUME_DATA.name,
+  category: "technology",
+  keywords: KEYWORDS,
+  alternates: {
+    canonical: SITE_URL,
+    // Plain-text versions for LLMs / AI search
+    types: { "text/markdown": url("llms-full.txt") },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Nuhman PK | Software Engineer",
-    description:
-      "Explore Nuhman PK's projects, achievements, and technical skills in web and software engineering.",
-    url: "https://nuhmanpk.github.io/portfolio",
-    siteName: "Nuhman PK Portfolio",
-    images: [
-      {
-        url: "https://media.licdn.com/dms/image/v2/D5603AQHsj5-yhlVfdQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719462659919?e=1762992000&v=beta&t=2x4zUevN0KkfBRv6gDJBcsrrRFV9EjsVZwVGVxq7fpc",
-        width: 800,
-        height: 800,
-        alt: "Nuhman PK – Software Engineer",
-      },
-    ],
+    type: "profile",
+    firstName: "Nuhman",
+    lastName: "PK",
+    username: "nuhmanpk",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    images: [OG_IMAGE],
     locale: "en_US",
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nuhman PK | Senior Software Engineer",
-    description:
-      "Full-stack engineer portfolio — Next.js, React, and Node.js.",
-    images: [
-      "https://media.licdn.com/dms/image/D4D03AQGxxxxxxxx/profile-displayphoto-shrink_800_800/0/xxxxx",
-    ],
+    title: TITLE,
+    description: DESCRIPTION,
+    creator: "@pk__nuhman",
+    images: [OG_IMAGE],
   },
   verification: {
     google: "PXoQnkWcZHvERUZ4PrJKs5lgcOlzmtGF8BJd1Dacjts",
   },
 };
 
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0d0d0c" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f3ee" },
+  ],
+};
+
+const sans = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-sans",
+});
+
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
+});
+
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-serif",
+  // next/font has no fallback metrics for this font yet; skip instead of warning on every build
+  adjustFontFallback: false,
 });
 
 export default function RootLayout({
@@ -74,28 +101,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}>
-      <body className="relative min-h-screen overflow-x-hidden cursor-none md:cursor-none">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${sans.variable} ${display.variable} ${mono.variable} ${serif.variable} font-sans`}
+    >
+      <body className="relative min-h-screen overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
+        />
         {/* Background Effects */}
-        <div className="fixed inset-0 -z-10">
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 bg-grid opacity-20" />
-
-          {/* Floating Gradient Orbs */}
-          <div className="gradient-orb orb-1" />
-          <div className="gradient-orb orb-2" />
-          <div className="gradient-orb orb-3" />
-          <div className="gradient-orb orb-4" />
-
-          {/* Subtle overlay to soften the effect */}
-          <div className="absolute inset-0 bg-background/60" />
+        <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+          <div className="glow -right-40 -top-40 h-[36rem] w-[36rem]" />
+          <div className="glow -left-60 top-[60%] h-[28rem] w-[28rem]" />
         </div>
+        <div className="grain" aria-hidden />
 
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
       </body>
-      <Analytics />
     </html>
   );
 }
