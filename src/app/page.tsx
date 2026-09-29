@@ -768,15 +768,15 @@ export default function Page() {
             <span className="text-brand-ink">08</span> / Contact
           </span>
           <h2 className="mt-6 font-display text-[clamp(3.25rem,11vw,9.5rem)] font-bold uppercase leading-[0.85] tracking-[-0.05em]">
-            Don&apos;t be a
+            Have an idea
             <br />
             <span className="font-serif font-normal normal-case italic tracking-[-0.02em] text-brand-ink">
-              stranger
+              AI can solve?
             </span>
             .
           </h2>
 
-          <p>
+          <p className="mt-[39px] mb-[-38px]">
             Building something open source? Need help bringing AI into an existing system?
             <br />
             Let&apos;s talk.
