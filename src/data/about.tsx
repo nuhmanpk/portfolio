@@ -9,7 +9,7 @@ export const aboutSections = [
     },
     {
         label: "AI & machine learning",
-        text: `Today most of my curiosity goes into AI/ML. I build practical AI systems rather than thin API wrappers: collecting and cleaning data, generating instruction datasets, fine-tuning and evaluating models, and building RAG, embeddings, semantic search and agent workflows that plug into real backends. Before LLMs I spent a lot of time on computer vision: OpenCV, OCR, object detection and automatic number-plate recognition (ANPR).`,
+        text: `Today most of my curiosity goes into AI/ML. I build practical AI systems rather than thin API wrappers: collecting and cleaning data, generating instruction datasets, fine-tuning and evaluating models, and building RAG, embeddings, semantic search and agent workflows that plug into real backends. Before LLMs I spent a lot of time on computer vision: OpenCV, OCR, object detection and automatic number-plate recognition .`,
     },
     {
         label: "Open source",
@@ -22,5 +22,13 @@ export const aboutSections = [
     {
         label: "Off-screen",
         text: `Away from the keyboard you’ll usually find me hiking, brewing coffee, or exploring somewhere new. That same curiosity is what keeps me building side projects: I like understanding how things work, and then making them work better.`,
+    },
+    {
+    label: "What’s next",
+    text: `I’m increasingly interested in the space where AI meets real software: taking existing products, workflows and messy systems and figuring out where intelligence, automation or better tooling can make them genuinely more useful. I want to keep building open-source tools, experimenting with new models and developer workflows, and working on problems where the interesting part isn’t just making something work, but making it worth using.`,
+    },
+    {
+    label: "TL;DR",
+    text: `Python → automation → scraping → full-stack → AI/ML → open source. I build things, break things, learn how they work, and usually automate them so I don't have to do them twice. Most importantly, I like turning interesting problems into useful software.`,
     },
 ];
