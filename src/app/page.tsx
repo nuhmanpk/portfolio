@@ -41,23 +41,24 @@ const NAV: { id: string; label: string }[] = [
 // Hand-maintained numbers. Update occasionally.
 // Last checked Sep 2026 via PyPI, VS Code Marketplace, npm and GitHub APIs.
 const STATS = [
-  { value: "100k+", label: "PyPI downloads" },
-  { value: "8", label: "PyPI packages" },
+  { value: "150k+", label: "PyPI downloads" },
+  { value: "15+", label: "PyPI packages" },
   { value: "5.3k+", label: "VS Code installs" },
-  { value: "3", label: "VS Code extensions" },
+  { value: "3+", label: "VS Code extensions" },
   { value: "1.3k+", label: "npm downloads" },
-  { value: "5", label: "npm packages" },
+  { value: "5+", label: "npm packages" },
   { value: "900+", label: "GitHub stars" },
   { value: "100+", label: "Public repos" },
-  { value: "16", label: "Certifications" },
+  { value: "20+", label: "Certifications" },
   { value: `${new Date().getFullYear() - 2019}+`, label: "Years shipping" },
 ];
 
 const SERVICES = [
   { title: "Full-stack web apps", tech: "React, Next.js, Node.js" },
+  { title: "AI strategy & implementation", tech: "AI roadmaps, LLMs, automation, system integration" },
+  { title: "Automation, scraping & data pipelines", tech: "Python, Puppeteer, Selenium" },
   { title: "AI & LLM integrations", tech: "RAG, agents, MCP" },
   { title: "APIs & backend systems", tech: "FastAPI, Express" },
-  { title: "Automation, scraping & data pipelines", tech: "Python, Puppeteer, Selenium" },
   { title: "Telegram & chat bots at scale", tech: "Pyrogram, Node.js" },
   { title: "Developer tooling", tech: "CLIs, VS Code extensions, SDKs" },
 ];
@@ -774,6 +775,12 @@ export default function Page() {
             </span>
             .
           </h2>
+
+          <p>
+            Building something open source? Need help bringing AI into an existing system?
+            <br />
+            Let&apos;s talk.
+          </p>
 
           <div className="mt-12 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <div className="flex items-center gap-4">
