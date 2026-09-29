@@ -7,7 +7,7 @@ import {
   Coffee,
   Dumbbell,
   Github,
-  House,
+  Home,
   Laptop,
   Moon,
   PartyPopper,
@@ -113,7 +113,7 @@ const TONE: Record<
     label: "Debugging",
   },
   family: {
-    icon: House,
+    icon: Home,
     bar: "bg-teal-400",
     chip: "bg-teal-400/15 text-teal-500",
     dot: "bg-teal-400",
