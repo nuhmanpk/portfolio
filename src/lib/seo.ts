@@ -101,7 +101,7 @@ export function jsonLd() {
         name: TITLE,
         isPartOf: { "@id": website },
         mainEntity: { "@id": person },
-        dateModified: new Date().toISOString().slice(0, 10),
+        dateModified: "2026-09-29T00:00:00+05:30",
         primaryImageOfPage: OG_IMAGE.url,
       },
       {

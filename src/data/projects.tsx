@@ -12,13 +12,25 @@ export const projects = [
             href: "https://pypi.org/project/YoutubeTags/",
         },
     },
+        {
+        title: "Headless Driver",
+        techStack: ["Open Source", "Pypi Package", "Python", "Headless", "Automation"],
+        description:
+            "Headless Chrome WebDriver wrapper for Python (Selenium made simple)",
+        featured: true,
+        aiSummary: "Selenium without the headache. Automate all the things, see none of the browsers. 🤖",
+        link: {
+            label: "https://pypi.org/project/headless-driver/",
+            href: "https://pypi.org/project/headless-driver/",
+        },
+    },
     {
         title: "GitSince",
         techStack: [
             "Node", "Side Project", "Open Source", "Typescript"
         ],
         description: "Dynamic GitHub badges showing your account age and coding journey with customizable themes and styles",
-        featured: true,
+        featured: false,
         aiSummary: "Because everyone needs to flex how long they've been pushing commits. It's like LinkedIn but for your terminal. 📅",
         link: {
             label: "https://github.com/nuhmanpk/GitSince",
@@ -53,7 +65,7 @@ export const projects = [
         techStack: ["Python", "Side Project", "Open Source", "Pypi Package"],
         description:
             "Unique api key generation tools with more built in functionalities like time / date based hashing, prefix for more unique key creation.",
-        featured: false,
+        featured: true,
         aiSummary: "Making API keys so unique, even the NSA can't guess them. Probably. Don't quote me on that. 🔐",
         link: {
             label: "https://pypi.org/project/generateApiKey/",
@@ -166,18 +178,6 @@ export const projects = [
         link: {
             label: "https://www.npmjs.com/package/matricx",
             href: "https://www.npmjs.com/package/matricx",
-        },
-    },
-    {
-        title: "Headless Driver",
-        techStack: ["Open Source", "Pypi Package", "Python", "Headless", "Automation"],
-        description:
-            "Headless Chrome WebDriver wrapper for Python (Selenium made simple)",
-        featured: false,
-        aiSummary: "Selenium without the headache. Automate all the things, see none of the browsers. 🤖",
-        link: {
-            label: "https://pypi.org/project/headless-driver/",
-            href: "https://pypi.org/project/headless-driver/",
         },
     },
 ];
