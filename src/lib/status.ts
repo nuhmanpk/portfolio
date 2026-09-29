@@ -313,7 +313,7 @@ export interface Status extends StatusInfo {
 export function getStatus(date = new Date()): Status {
   const { weekday, hours } = istParts(date);
   const blocks = getBlocks(weekday);
-  const weekend = weekday === "Sat" || weekday === "Sun");
+  const weekend = weekday === "Sat" || weekday === "Sun";
 
   const index = blocks.findIndex(
     (block) => hours >= block.from && hours < block.to,
